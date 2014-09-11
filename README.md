@@ -6,11 +6,11 @@ A repo containing work done for the first semester project for GAME
 ##Team Members
 ---
 
-Joey Goode
-Josh Kosof
-Mark Trueblood
-Oskar Strom
-Brett McCabe
+Joey Goode - Tech
+Josh Kosof - Design
+Mark Trueblood - Producer
+Oskar Strom - Art
+Brett McCabe - Utility
 
 ##Ideas
 ---
