@@ -9,7 +9,7 @@ A repo containing work done for the first semester project for GAME
 Joey Goode
 Josh Kosof
 Mark Trueblood
-Oscar Strom
+Oskar Strom
 Brett McCabe
 
 ##Ideas
