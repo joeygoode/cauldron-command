@@ -24,4 +24,4 @@ A repo containing work done for the first semester project for GAME
 * ~~Procedural Chess variant generation~~
 * ~~Music game~~
 * Point and Click Adventure where you have to die to progress
-* Card fortress where you decide how to use and combine cards
+* **Card fortress where you decide how to use and combine cards**
