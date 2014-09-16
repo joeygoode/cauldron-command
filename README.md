@@ -31,30 +31,29 @@ A repo containing work done for the first semester project for GAME
 ##Settings
 ---
 
-* High Fantasy
-* 14th Century Nautical
-* Great War Nautical
-* WWII
-* Cold War Nautical
-* Space
-* Magitech
-* Steampunk
-* Zeppelins
-* Kidtech
-* Wizarding world
-* Farmpunk
-* Desert
-* Samurai
-* Kitten
+* 3 0 ~~High Fantasy~~
+* 3 2 14th Century Nautical
+* 0 ~~Great War Nautical~~
+* 0 ~~WWII~~
+* 0 ~~Cold War Nautical~~
+* 1 ~~Space~~
+* 0 ~~Magitech~~
+* 4 4 Steampunk Zeppelins
+* 1 1 Kidtech
+* 1 1 Wizarding world
+* 0 ~~Farmpunk~~
+* 2 0 ~~Arabian~~
+* 0 ~~Samurai~~
+* 1 ~~Kitten~~
 
 ##Art Styles
 ---
 
-* Realism
+* ~~Realism~~
 * Pixel Art
 * Limited Palette (Monochrome)
-* Yarn/Fabric
-* Watercolor
+* ~~Yarn/Fabric~~
+* ~~Watercolor~~
 * Paper
 * Boardgamey
 * Technicolor
