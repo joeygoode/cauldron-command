@@ -23,8 +23,9 @@ A repo containing work done for the first semester project for GAME
 ##Screen Layout 
 ---
 
-Two bases on each side and a neutral middle area. View from
-side. Bases don't move. Resources spawn in the neutral area.
+* 1920x1080 fixed resolution
+* Two bases on each side and a neutral middle area. 
+* Side-view. 
 
 ##Mechanics
 ---
@@ -34,3 +35,10 @@ side. Bases don't move. Resources spawn in the neutral area.
 * You can pick up resources
 * You can build things out of resources
 * You can combine resources
+
+##Unity usage tips:
+* Sprite import settings:
+  * 1 Pixels To Units
+  * Pivot: Bottom
+  * Filter Mode: Point
+  * Format: Truecolor
