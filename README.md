@@ -13,50 +13,12 @@ A repo containing work done for the first semester project for GAME
 * Oskar Strom - Art
 * Brett McCabe - Utility
 
-##Ideas
+##Theme 
 ---
 
-* ~~Roguelike Card Game~~
-* ~~Local Multiplayer Card Judging Game a la Apples to Apples~~
-* ~~Tactical Multiplayer a la Final Fantasy Tactics~~
-* Debug Console Puzzle Game
-* ~~Creepy Pasta Generator~~
-* Procedurally Generated Exploration Game
-* ~~Tutorial Parody Game~~
-* ~~Procedural Chess variant generation~~
-* ~~Music game~~
-* Point and Click Adventure where you have to die to progress
-* **Card fortress where you decide how to use and combine cards**
-
-##Settings
----
-
-* 3 0 ~~High Fantasy~~
-* 3 2 14th Century Nautical
-* 0 ~~Great War Nautical~~
-* 0 ~~WWII~~
-* 0 ~~Cold War Nautical~~
-* 1 ~~Space~~
-* 0 ~~Magitech~~
-* 4 4 Steampunk Zeppelins
-* 1 1 Kidtech
-* 1 1 Wizarding world
-* 0 ~~Farmpunk~~
-* 2 0 ~~Arabian~~
-* 0 ~~Samurai~~
-* 1 ~~Kitten~~
-
-##Art Styles
----
-
-* ~~Realism~~
-* Pixel Art
-* Limited Palette (Monochrome)
-* ~~Yarn/Fabric~~
-* ~~Watercolor~~
-* Paper
-* Boardgamey
-* Technicolor
+* Halloween Haunted House
+* Spooky
+* Skeletons
 
 ##Screen Layout 
 ---
