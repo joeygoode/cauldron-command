@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        box = new OneDBox(transform.position.x - (width / 2), width, 0, false); 
+        box = new OneDBox(transform.position.x - (width / 2), width, 0); 
         animator = GetComponent<Animator>();
     }
 
