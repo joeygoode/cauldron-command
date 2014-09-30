@@ -13,7 +13,9 @@ public class Fort : MonoBehaviour {
     
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
-    
+
+    private int actualHP;
+
 	// Use this for initialization
 	void Start () {
         box = new OneDBox(transform.position.x - width / 2, width, 0);
@@ -26,5 +28,9 @@ public class Fort : MonoBehaviour {
     
     void FixedUpdate () {
         box.FixedUpdate();
+    }
+
+    public void ResetHP () {
+        actualHP = hitpoints;
     }
 }
