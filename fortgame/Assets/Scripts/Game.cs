@@ -43,6 +43,18 @@ public class Game : MonoBehaviour {
         if (GameRunning) {
             Left.CollideWithFort(Right.fort);
             Right.CollideWithFort(Left.fort);
+            //collide mobs with each other
+            foreach (Mob m1 in Left.mobs)
+            {
+                foreach (Mob m2 in Right.mobs)
+                {
+                    if (m1.box.overlap(m2.box))
+                    {
+                        m1.targetMob = m2;
+                        m2.targetMob = m1;
+                    }
+                }
+            }
         }
     }
 }

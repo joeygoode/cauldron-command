@@ -31,10 +31,10 @@ public class Team : MonoBehaviour {
         Player = PlayerObj.GetComponent<PlayerController>();
         Score = ScoreObj.GetComponent<GUIText>();
 	}
-	
+
     // Update is called once per frame
     void Update () {
-        Score.text = "HP: " + Fort.GetActualHP();
+        Score.text = "HP: " + fort.GetActualHP();
     }
 
     public void CollideWithFort (Fort f) {

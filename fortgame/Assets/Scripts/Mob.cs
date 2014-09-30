@@ -39,6 +39,7 @@ public class Mob : MonoBehaviour {
         //set collision box
         box = new OneDBox(transform.position.x - (width / 2), width, 0); 
 
+        animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -47,10 +48,37 @@ public class Mob : MonoBehaviour {
 	}
     
     void FixedUpdate () {
+        //motion
+        if (targetMob == null)
+        {
+            box.velocity = walkSpeed * team.Direction;
+            animator.SetBool("isAttacking", false);
+        }
+        else
+        {
+            box.velocity = 0;
+            animator.SetBool("isAttacking", true);
+        }
         //update collision box
         box.FixedUpdate();
         //adjust sprite transform
         transform.position = new Vector3(box.x + (width / 2), y, -y / 1000);
         transform.localScale = new Vector3(xScale * team.Direction, (1 - squish) * xScale, 1);
+        //attack
+        if (attackTimer > 0) {
+            attackTimer -= Time.fixedDeltaTime;
+        } else {
+            attackTimer = 0;
+        }
+
+        if (targetMob != null) {
+            if (attackTimer == 0) {
+                attackTimer = attackSpeed;
+                targetMob.hitPoints -= attackPower;
+                if (targetMob.hitPoints <= 0) {
+                    targetMob = null;
+                }
+            }
+        }
     }
 }
