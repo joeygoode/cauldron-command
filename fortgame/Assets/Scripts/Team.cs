@@ -6,6 +6,8 @@ public class Team : MonoBehaviour {
     public string FortName;
     public string PlayerName;
     public string ScoreName;
+    public Color Color;
+    public int Direction;
     //GameObjects in the scene
     private GameObject FortObj;
     private GameObject PlayerObj;
