@@ -38,4 +38,11 @@ public class Game : MonoBehaviour {
             }
         }
 	}
+
+    void FixedUpdate () {
+        if (GameRunning) {
+            Left.CollideWithFort(Right.fort);
+            Right.CollideWithFort(Left.fort);
+        }
+    }
 }
