@@ -51,6 +51,6 @@ public class Mob : MonoBehaviour {
         box.FixedUpdate();
         //adjust sprite transform
         transform.position = new Vector3(box.x + (width / 2), y, -y / 1000);
-        transform.localScale = new Vector3(xScale, (1 - squish) * xScale, 1);
+        transform.localScale = new Vector3(xScale * team.Direction, (1 - squish) * xScale, 1);
     }
 }
