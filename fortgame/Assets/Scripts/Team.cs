@@ -29,7 +29,7 @@ public class Team : MonoBehaviour {
 	
     // Update is called once per frame
     void Update () {
-        Score.text = "HP: " + Fort.hitpoints;
+        Score.text = "HP: " + Fort.GetActualHP();
     }
 
     public Fort GetFort () {
