@@ -13,7 +13,7 @@ public class Team : MonoBehaviour {
     private GameObject PlayerObj;
     private GameObject ScoreObj;
     //Fort script objects
-    private Fort Fort;
+    [HideInInspector] public Fort fort;
     //Character script objects
     private PlayerController Player;
     //Text display objects
@@ -34,7 +34,4 @@ public class Team : MonoBehaviour {
         Score.text = "HP: " + Fort.GetActualHP();
     }
 
-    public Fort GetFort () {
-        return Fort;
-    }
 }

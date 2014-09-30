@@ -31,8 +31,8 @@ public class Game : MonoBehaviour {
 	        //Input
             float s = Input.GetAxis("start");
             if (s > 0.0) {
-                Left.GetFort().ResetHP();
-                Right.GetFort().ResetHP();
+                Left.fort.ResetHP();
+                Right.fort.ResetHP();
                 Menu.GetComponent<SpriteRenderer>().enabled = false;
                 GameRunning = true;
             }
