@@ -33,4 +33,8 @@ public class Fort : MonoBehaviour {
     public void ResetHP () {
         actualHP = hitpoints;
     }
+
+    public bool IsDead () {
+        return actualHP <= 0;
+    }
 }

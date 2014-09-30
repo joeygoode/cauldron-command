@@ -31,4 +31,8 @@ public class Team : MonoBehaviour {
     void Update () {
         Score.text = "HP: " + Fort.hitpoints;
     }
+
+    public Fort GetFort () {
+        return Fort;
+    }
 }
