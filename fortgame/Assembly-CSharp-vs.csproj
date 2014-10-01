@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Cauldron.cs" />
      <Compile Include="Assets\Scripts\Fort.cs" />
-     <Compile Include="Assets\Scripts\FortManager.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\Mob.cs" />
      <Compile Include="Assets\Scripts\OneDBox.cs" />
