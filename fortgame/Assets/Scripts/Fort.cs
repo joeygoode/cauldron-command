@@ -8,13 +8,12 @@ public class Fort : MonoBehaviour {
     public int faction = 0;
     public GameObject cauldronPrefab;
 
-    public List<Mob> mobs = new List<Mob>();
     public List<Cauldron> cauldrons = new List<Cauldron>();
     
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
 
-    private int actualHP;
+    [HideInInspector] public int actualHP;
 
 	// Use this for initialization
 	void Start () {
@@ -32,10 +31,6 @@ public class Fort : MonoBehaviour {
 
     public void ResetHP () {
         actualHP = hitpoints;
-    }
-
-    public int GetActualHP () {
-        return actualHP;
     }
 
     public bool IsDead () {
