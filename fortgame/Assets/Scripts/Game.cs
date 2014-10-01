@@ -23,7 +23,7 @@ public class Game : MonoBehaviour {
             Right.SpawnMobs();
         } else {
 	        //Input
-            float s = Input.GetAxis("start");
+            float s = Input.GetAxis("Start");
             if (s > 0.0) {
                 Left.fort.ResetHP();
                 Right.fort.ResetHP();
