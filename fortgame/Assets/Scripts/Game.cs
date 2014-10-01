@@ -27,6 +27,8 @@ public class Game : MonoBehaviour {
                 GameRunning = false;
                 Menu.GetComponent<SpriteRenderer>().enabled = true;
             }
+            Left.SpawnMobs();
+            Right.SpawnMobs();
         } else {
 	        //Input
             float s = Input.GetAxis("start");

@@ -9,6 +9,8 @@ public class Team : MonoBehaviour {
     public string ScoreName;
     public Color Color;
     public int Direction;
+    // Ugly, need a better way to do this
+    public GameObject enemyPrefab;
 
     public List<Mob> mobs = new List<Mob>();
     //GameObjects in the scene
@@ -35,6 +37,13 @@ public class Team : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         Score.text = "HP: " + fort.GetActualHP();
+    }
+
+    public void SpawnMobs () {
+        Transform t = fort.GetComponentInParent<Transform>();
+        GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
+        Mob m = g.GetComponent<Mob>();
+        mobs.Add(m);
     }
 
     public void CollideWithFort (Fort f) {
