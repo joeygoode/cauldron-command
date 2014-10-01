@@ -7,7 +7,7 @@ public class Mob : MonoBehaviour {
     public float height = 10; //height used for stacking
     public float squishiness = 0.5f; //how much it squishes when stacked
     public float walkSpeed = 30.0f;
-    public string teamName;
+    public Team team;
     [HideInInspector] public int faction = 0;
     public int hitPoints = 10;
     public int attackPower = 1; //damage per attack
@@ -20,15 +20,12 @@ public class Mob : MonoBehaviour {
     [HideInInspector] public float y = 0;
     [HideInInspector] public float squish = 0;
     private Animator animator;
-    private Team team;
     //for fun
     private float xScale = 1;
 
 	// Use this for initialization
 	void Start () {
-        //Link names
-        team = GameObject.Find(teamName);
-        GetComponent<SpriteRenderer>().color = team.TeamColor;
+        GetComponent<SpriteRenderer>().color = team.Color;
 
         //for fun
         walkSpeed = walkSpeed * Random.value;

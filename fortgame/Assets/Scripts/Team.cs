@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class Team : MonoBehaviour {
     //strings for getting the game objects placed in the scene
-    public string FortName;
-    public string PlayerName;
-    public string ScoreName;
     public Color Color;
     public int Direction;
     // Ugly, need a better way to do this
@@ -14,9 +11,9 @@ public class Team : MonoBehaviour {
 
     public List<Mob> mobs = new List<Mob>();
     //GameObjects in the scene
-    private GameObject FortObj;
-    private GameObject PlayerObj;
-    private GameObject ScoreObj;
+    public GameObject FortObj;
+    public GameObject PlayerObj;
+    public GameObject ScoreObj;
     //Fort script objects
     [HideInInspector] public Fort fort;
     //Character script objects
@@ -25,11 +22,7 @@ public class Team : MonoBehaviour {
     private GUIText Score;
 	// Use this for initialization
 	void Start () {
-        FortObj = GameObject.Find(FortName);
-        PlayerObj = GameObject.Find(PlayerName);
-        ScoreObj = GameObject.Find(ScoreName);
-        
-        Fort = FortObj.GetComponent<Fort>();
+        fort = FortObj.GetComponent<Fort>();
         Player = PlayerObj.GetComponent<PlayerController>();
         Score = ScoreObj.GetComponent<GUIText>();
 	}
