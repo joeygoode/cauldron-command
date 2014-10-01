@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Game : MonoBehaviour {
     // Game instances
@@ -17,6 +18,8 @@ public class Game : MonoBehaviour {
         if (GameRunning) {
             if (Left.fort.IsDead() || Right.fort.IsDead()) {
                 GameRunning = false;
+                Left.mobs = new List<Mob>();
+                Right.mobs = new List<Mob>();
                 Menu.GetComponent<SpriteRenderer>().enabled = true;
             }
             Left.SpawnMobs();
