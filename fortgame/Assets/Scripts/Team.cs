@@ -30,7 +30,7 @@ public class Team : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Score.text = "HP: " + fort.GetActualHP();
+        Score.text = "HP: " + fort.actualHP;
     }
 
     public void SpawnMobs () {

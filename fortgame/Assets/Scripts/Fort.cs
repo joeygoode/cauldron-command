@@ -13,7 +13,7 @@ public class Fort : MonoBehaviour {
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
 
-    private int actualHP;
+    [HideInInspector] public int actualHP;
 
 	// Use this for initialization
 	void Start () {
@@ -31,10 +31,6 @@ public class Fort : MonoBehaviour {
 
     public void ResetHP () {
         actualHP = hitpoints;
-    }
-
-    public int GetActualHP () {
-        return actualHP;
     }
 
     public bool IsDead () {
