@@ -20,6 +20,7 @@ public class Team : MonoBehaviour {
     private PlayerController Player;
     //Text display objects
     private GUIText Score;
+    private int LastMob = 0;
 	// Use this for initialization
 	void Start () {
         fort = FortObj.GetComponent<Fort>();
@@ -33,10 +34,17 @@ public class Team : MonoBehaviour {
     }
 
     public void SpawnMobs () {
-        Transform t = fort.GetComponentInParent<Transform>();
-        GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
-        Mob m = g.GetComponent<Mob>();
-        mobs.Add(m);
+        if (LastMob == 0)
+        {
+            Transform t = fort.GetComponentInParent<Transform>();
+            GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
+            Mob m = g.GetComponent<Mob>();
+            m.team = this;
+            mobs.Add(m);
+            LastMob = (int)(Random.value) % 60 + 100;
+        } else {
+            LastMob--;
+        }
     }
 
     public void CollideWithFort (Fort f) {
