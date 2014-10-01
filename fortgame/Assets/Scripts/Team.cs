@@ -48,7 +48,7 @@ public class Team : MonoBehaviour {
     }
 
     public void CollideWithFort (Fort f) {
-        foreach (Mob m in fort.mobs)
+        foreach (Mob m in mobs)
         {
             if (m.box.overlap(f.box))
             {
