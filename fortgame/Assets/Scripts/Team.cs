@@ -57,4 +57,21 @@ public class Team : MonoBehaviour {
             }
         }
     }
+
+    public void RemoveDead () {
+        //destroy any mobs with 0 hitpoints
+        List<Mob> deadMobBuffer = new List<Mob>();
+        foreach (Mob m in mobs)
+        {
+            if(m.hitPoints <= 0)
+            {
+                deadMobBuffer.Add(m);
+            }
+        }
+        foreach (Mob m in deadMobBuffer)
+        {
+            mobs.Remove(m);
+            Destroy(m.gameObject);
+        }
+    }
 }

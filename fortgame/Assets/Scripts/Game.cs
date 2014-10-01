@@ -37,6 +37,8 @@ public class Game : MonoBehaviour {
         if (GameRunning) {
             Left.CollideWithFort(Right.fort);
             Right.CollideWithFort(Left.fort);
+            Left.RemoveDead();
+            Right.RemoveDead();
             //collide mobs with each other
             foreach (Mob m1 in Left.mobs)
             {
