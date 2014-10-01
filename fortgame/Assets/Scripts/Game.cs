@@ -23,7 +23,7 @@ public class Game : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (GameRunning) {
-            if (Left.GetFort().IsDead() || Right.GetFort().IsDead()) {
+            if (Left.fort.IsDead() || Right.fort.IsDead()) {
                 GameRunning = false;
                 Menu.GetComponent<SpriteRenderer>().enabled = true;
             }
