@@ -8,7 +8,7 @@ public class Fort : MonoBehaviour {
     public int faction = 0;
     public GameObject cauldronPrefab;
 
-    public List<Cauldron> cauldrons = new List<Cauldron>();
+    //public List<Cauldron> cauldrons = new List<Cauldron>();
     
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
