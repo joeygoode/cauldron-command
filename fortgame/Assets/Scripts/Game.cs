@@ -7,10 +7,17 @@ public class Game : MonoBehaviour {
     public GameObject Menu;
     public Team Left;
     public Team Right;
-    private bool GameRunning = false;
+    public GameObject ResourcePrefab;
+    public float ResourceSpawnRate;
+    public float ResourceSpawnVariance;
+    public int MaxFreeResources;
 
+    private bool GameRunning = false;
+    private float ResourceSpawnCountdown;
+    private List<Resource> resources = new List<Resource>();
 	// Use this for initialization
 	void Start () {
+        ResetResourceCountdown();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +43,19 @@ public class Game : MonoBehaviour {
         }
 	}
 
+    void ResetResourceCountdown () {
+        ResourceSpawnCountdown = Random.Range(ResourceSpawnRate - ResourceSpawnVariance,
+                                              ResourceSpawnRate + ResourceSpawnVariance);
+    }
+
+    void SpawnResource () {
+        float x = Random.Range(Left.fort.box.x, Right.fort.box.x);
+        GameObject g = (GameObject)Instantiate(ResourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
+        Resource r = g.GetComponent<Resource>();
+        r.box.x = x;
+        resources.Add(r);
+    }
+
     void FixedUpdate () {
         if (GameRunning) {
             Left.CollideWithFort(Right.fort);
@@ -53,6 +73,13 @@ public class Game : MonoBehaviour {
                         m2.targetMob = m1;
                     }
                 }
+            }
+            if (resources.Count > MaxFreeResources) {
+            } else if (ResourceSpawnCountdown < 0) {
+                SpawnResource();
+                ResetResourceCountdown();
+            } else {
+                ResourceSpawnCountdown -= Time.fixedDeltaTime;
             }
         }
     }
