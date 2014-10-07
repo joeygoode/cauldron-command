@@ -12,7 +12,7 @@ public class Game : MonoBehaviour {
     public float ResourceSpawnVariance;
     public int MaxFreeResources;
 
-    private bool GameRunning = false;
+    private bool GameRunning = true;
     private float ResourceSpawnCountdown;
     private List<Resource> resources = new List<Resource>();
 	// Use this for initialization
@@ -22,25 +22,29 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        float startButton = Input.GetAxis("Start");
+        if (startButton > 0.0)
+        {
+            GameRunning = false;
+        } 
+        else if (Left.fort.IsDead() || Right.fort.IsDead()) {
+            GameRunning = false;
+        }
+        else
+        {
+            GameRunning = true;
+        }
+
+        float resetButton = Input.GetAxis("Reset");
+        if (resetButton > 0.0) {
+            Application.LoadLevel("mainmenu");
+        }
+
         if (GameRunning) {
-            if (Left.fort.IsDead() || Right.fort.IsDead()) {
-                GameRunning = false;
-                Left.mobs = new List<Mob>();
-                Right.mobs = new List<Mob>();
-                Menu.GetComponent<SpriteRenderer>().enabled = true;
-            }
             Left.SpawnMobs();
             Right.SpawnMobs();
-        } else {
-	        //Input
-            float s = Input.GetAxis("Start");
-            if (s > 0.0) {
-                Left.fort.ResetHP();
-                Right.fort.ResetHP();
-                Menu.GetComponent<SpriteRenderer>().enabled = false;
-                GameRunning = true;
-            }
         }
+
 	}
 
     void ResetResourceCountdown () {

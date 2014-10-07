@@ -30,7 +30,7 @@ public class Team : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Score.text = "HP: " + fort.actualHP;
+        Score.text = "HP: " + fort.hitpoints;
     }
 
     public void SpawnMobs () {
@@ -52,7 +52,7 @@ public class Team : MonoBehaviour {
         {
             if (m.box.overlap(f.box))
             {
-                f.actualHP -= m.fortDamage;
+                f.hitpoints -= m.fortDamage;
                 m.hitPoints = 0;
             }
         }
