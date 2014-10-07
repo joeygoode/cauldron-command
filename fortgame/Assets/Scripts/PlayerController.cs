@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     public OneDBox box;
     private Animator animator;
     private PlayerState state = PlayerState.Idle;
+    private Resource heldResource;
 
     // Use this for initialization
     void Start () {
@@ -54,6 +55,12 @@ public class PlayerController : MonoBehaviour {
         else {
             animator.SetBool("isWalking", false);
         }
+    }
+
+    public void ReceiveResource(Resource r) {
+        heldResource = r;
+        state = PlayerState.Carry;
+        heldResource.Pickup();
     }
 
     //Fixed Update is called at a fixed timestep
