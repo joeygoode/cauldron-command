@@ -15,12 +15,17 @@ public class PlayerController : MonoBehaviour {
 
     public string walkAxis = "P1Horizontal";
     public string digButton = "P1Dig";
+    public float pickUpDuration;
+    public float putDownDuration;
 
     [HideInInspector]
     public OneDBox box;
+    [HideInInspector] public Game game;
     private Animator animator;
     private PlayerState state = PlayerState.Idle;
+    private float stateDuration = 0.0f;
     private Resource heldResource;
+
 
     // Use this for initialization
     void Start () {
@@ -37,6 +42,15 @@ public class PlayerController : MonoBehaviour {
             //physics
             box.velocity = walkDir * walkSpeed;
             //animation
+            if (Input.GetAxis(digButton) > 0) {
+                if (state == PlayerState.Idle) {
+                    stateDuration = pickUpDuration;
+                    state = PlayerState.PickUp;
+                } else if (state == PlayerState.Carry) {
+                    stateDuration = putDownDuration;
+                    state = PlayerState.PutDown;
+                }
+            }
             if (walkDir != 0)
             {
                 animator.SetBool("isWalking", true);
@@ -52,8 +66,17 @@ public class PlayerController : MonoBehaviour {
                 animator.SetBool("isWalking", false);
             }
         }
-        else {
-            animator.SetBool("isWalking", false);
+        else if (state == PlayerState.PickUp && stateDuration < 0.0)
+        {
+            state = PlayerState.Carry;
+            game.RemoveResource(this);
+        }
+        else if (state == PlayerState.PutDown && stateDuration < 0.0)
+        {
+            state = PlayerState.Idle;
+            heldResource.Drop();
+            game.AddResource(heldResource);
+            heldResource = null;
         }
     }
 
@@ -66,6 +89,10 @@ public class PlayerController : MonoBehaviour {
     //Fixed Update is called at a fixed timestep
     void FixedUpdate () {
         box.FixedUpdate();
+        stateDuration -= Time.fixedDeltaTime;
         transform.position = new Vector3(box.x + (width / 2), transform.position.y, transform.position.z);
+        if (heldResource != null) {
+            heldResource.box.x = box.x;
+        }
     }
 }

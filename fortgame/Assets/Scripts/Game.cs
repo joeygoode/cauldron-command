@@ -22,6 +22,8 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Left.Player.game = this;
+        Right.Player.game = this;
         if (GameRunning) {
             if (Left.fort.IsDead() || Right.fort.IsDead()) {
                 GameRunning = false;
