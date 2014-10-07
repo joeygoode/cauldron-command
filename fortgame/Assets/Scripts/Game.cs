@@ -22,16 +22,19 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float startButton = Input.GetAxis("Start");
+        float startButton = Input.GetAxisRaw("Start-Pause"); //has to be raw to work while paused
         if (startButton > 0.0)
         {
+            Time.timeScale = 0;
             GameRunning = false;
         } 
         else if (Left.fort.IsDead() || Right.fort.IsDead()) {
+            Time.timeScale = 0;
             GameRunning = false;
         }
         else
         {
+            Time.timeScale = 1;
             GameRunning = true;
         }
 
