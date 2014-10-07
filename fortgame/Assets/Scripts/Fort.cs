@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Fort : MonoBehaviour {
     
-    public int hitpoints = 100;    
+    public int maxHitpoints = 100;    
     public float width = 32;
     public int faction = 0;
     public GameObject cauldronPrefab;
@@ -13,11 +13,12 @@ public class Fort : MonoBehaviour {
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
 
-    [HideInInspector] public int actualHP;
+    [HideInInspector] public int hitpoints = 1;
 
 	// Use this for initialization
 	void Start () {
         box = new OneDBox(transform.position.x - width / 2, width, 0);
+        hitpoints = maxHitpoints;
 	}
 	
 	// Update is called once per frame
@@ -30,10 +31,10 @@ public class Fort : MonoBehaviour {
     }
 
     public void ResetHP () {
-        actualHP = hitpoints;
+        hitpoints = maxHitpoints;
     }
 
     public bool IsDead () {
-        return actualHP <= 0;
+        return hitpoints <= 0;
     }
 }
