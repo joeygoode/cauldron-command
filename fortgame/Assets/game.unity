@@ -110,6 +110,7 @@ MonoBehaviour:
   PlayerObj: {fileID: 1376002634}
   ScoreObj: {fileID: 1925439084}
   fort: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!4 &123421536
 Transform:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &147612548
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkAxis: P1Horizontal
   digButton: P1Dig
+  pickUpDuration: 0
+  putDownDuration: 0
+  game: {fileID: 0}
 --- !u!95 &147612550
 Animator:
   serializedVersion: 3
@@ -335,7 +339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &441595195
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +427,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3ed39890f6626c046baca70814b1b761, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -682,6 +686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkAxis: P2Horizontal
   digButton: P2Dig
+  pickUpDuration: 2
+  putDownDuration: 2
+  game: {fileID: 0}
 --- !u!95 &1376002636
 Animator:
   serializedVersion: 3
@@ -732,7 +739,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1001 &1509489656
 Prefab:
   m_ObjectHideFlags: 0
@@ -926,6 +933,7 @@ MonoBehaviour:
   PlayerObj: {fileID: 147612548}
   ScoreObj: {fileID: 1676552709}
   fort: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!4 &1702375666
 Transform:
   m_ObjectHideFlags: 0
