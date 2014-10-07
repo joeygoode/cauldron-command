@@ -15,15 +15,16 @@ public class PlayerController : MonoBehaviour {
 
     public string walkAxis = "P1Horizontal";
     public string digButton = "P1Dig";
-    public float pickUpDuration;
-    public float putDownDuration;
+    public float pickUpDuration = 0.2f;
+    public float putDownDuration = 0.1f;
 
     [HideInInspector]
     public OneDBox box;
-    [HideInInspector] public Game game;
+    [HideInInspector] 
+    public Game game;
+
     private Animator animator;
-    private PlayerState state = PlayerState.Idle;
-    private float stateDuration = 0.0f;
+    private float animationTimer = 0.0f;
     private Resource heldResource;
 
 
@@ -35,22 +36,38 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (state == PlayerState.Idle || state == PlayerState.Carry)
+        //update timers
+        animationTimer -= Time.deltaTime;
+        if (animationTimer < 0)
+        {
+            animationTimer = 0;
+        }
+
+        //check pick-up and put-down
+        if (Input.GetAxis(digButton) > 0 && animationTimer == 0)
+        {
+            if (heldResource == null) {
+                game.RemoveResource(this);
+                animationTimer = pickUpDuration;
+                animator.SetBool("isLifting", true); //do you even lift bro?
+            }
+            else 
+            {
+                heldResource.Drop();
+                heldResource = null;
+                animationTimer = putDownDuration;
+                animator.SetBool("isLifting", false);
+            }
+        }
+
+        //check walk if we're not animating
+        if (animationTimer == 0)
         {
             //input
             float walkDir = Input.GetAxis(walkAxis);
             //physics
             box.velocity = walkDir * walkSpeed;
             //animation
-            if (Input.GetAxis(digButton) > 0) {
-                if (state == PlayerState.Idle) {
-                    stateDuration = pickUpDuration;
-                    state = PlayerState.PickUp;
-                } else if (state == PlayerState.Carry) {
-                    stateDuration = putDownDuration;
-                    state = PlayerState.PutDown;
-                }
-            }
             if (walkDir != 0)
             {
                 animator.SetBool("isWalking", true);
@@ -66,30 +83,25 @@ public class PlayerController : MonoBehaviour {
                 animator.SetBool("isWalking", false);
             }
         }
-        else if (state == PlayerState.PickUp && stateDuration < 0.0)
+        else
         {
-            state = PlayerState.Carry;
-            game.RemoveResource(this);
+            box.velocity = 0;
+            animator.SetBool("isWalking", false);
         }
-        else if (state == PlayerState.PutDown && stateDuration < 0.0)
-        {
-            state = PlayerState.Idle;
-            heldResource.Drop();
-            game.AddResource(heldResource);
-            heldResource = null;
-        }
+
+        //final animator information
+        animator.SetFloat("animTimer", animationTimer);
+        animator.SetBool("isHolding", heldResource != null);
     }
 
     public void ReceiveResource(Resource r) {
         heldResource = r;
-        state = PlayerState.Carry;
         heldResource.Pickup();
     }
 
     //Fixed Update is called at a fixed timestep
     void FixedUpdate () {
         box.FixedUpdate();
-        stateDuration -= Time.fixedDeltaTime;
         transform.position = new Vector3(box.x + (width / 2), transform.position.y, transform.position.z);
         if (heldResource != null) {
             heldResource.box.x = box.x;
