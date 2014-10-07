@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+enum PlayerState {
+    Idle,
+    PickUp,
+    Carry,
+    PutDown
+}
+
 public class PlayerController : MonoBehaviour {
 
     private float walkSpeed = 50.0f;
@@ -12,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public OneDBox box;
     private Animator animator;
+    private PlayerState state = PlayerState.Idle;
 
     // Use this for initialization
     void Start () {
@@ -20,20 +28,28 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () { 
-        //input
-        float walkDir = Input.GetAxis(walkAxis);
-        //physics
-        box.velocity = walkDir * walkSpeed;
-        //animation
-        if(walkDir != 0) {
-            animator.SetBool("isWalking", true);
-            if (walkDir < 0) {
-                transform.localScale = new Vector3 (-1, 1, 1);
-    	    } 
-            else if (walkDir > 0) {
-    	        transform.localScale = new Vector3(1, 1, 1);
-    	    }
+    void Update () {
+        if (state == PlayerState.Idle || state == PlayerState.Carry)
+        {
+            //input
+            float walkDir = Input.GetAxis(walkAxis);
+            //physics
+            box.velocity = walkDir * walkSpeed;
+            //animation
+            if (walkDir != 0)
+            {
+                animator.SetBool("isWalking", true);
+                if (walkDir < 0)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                } else if (walkDir > 0)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+            } else
+            {
+                animator.SetBool("isWalking", false);
+            }
         }
         else {
             animator.SetBool("isWalking", false);
