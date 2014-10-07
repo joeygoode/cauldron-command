@@ -56,6 +56,24 @@ public class Game : MonoBehaviour {
         resources.Add(r);
     }
 
+    public void RemoveResource (PlayerController p) {
+        Resource removedResource = null;
+        foreach (Resource r in resources) {
+            if (r.box.overlap(p.box)) {
+                p.ReceiveResource(r);
+                removedResource = r;
+                break;
+            }
+        }
+        if (removedResource != null) {
+            resources.Remove(removedResource);
+        }
+    }
+
+    public void AddResource (Resource r) {
+        resources.Add(r);
+    }
+
     void FixedUpdate () {
         if (GameRunning) {
             Left.CollideWithFort(Right.fort);
