@@ -58,6 +58,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkAxis: P2Horizontal
   digButton: P2Dig
+  pickUpDuration: 2
+  putDownDuration: 2
+  carriedResourceHeight: 100
+  game: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

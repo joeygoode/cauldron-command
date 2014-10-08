@@ -22,6 +22,8 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Left.Player.game = this;
+        Right.Player.game = this;
         float startButton = Input.GetAxisRaw("Start-Pause"); //has to be raw to work while paused
         if (startButton > 0.0)
         {
@@ -60,6 +62,24 @@ public class Game : MonoBehaviour {
         GameObject g = (GameObject)Instantiate(ResourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
         r.box.x = x;
+        resources.Add(r);
+    }
+
+    public void RemoveResource (PlayerController p) {
+        Resource removedResource = null;
+        foreach (Resource r in resources) {
+            if (r.box.overlap(p.box)) {
+                p.ReceiveResource(r);
+                removedResource = r;
+                break;
+            }
+        }
+        if (removedResource != null) {
+            resources.Remove(removedResource);
+        }
+    }
+
+    public void AddResource (Resource r) {
         resources.Add(r);
     }
 

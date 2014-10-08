@@ -17,7 +17,7 @@ public class Team : MonoBehaviour {
     //Fort script objects
     [HideInInspector] public Fort fort;
     //Character script objects
-    private PlayerController Player;
+    public PlayerController Player;
     //Text display objects
     private GUIText Score;
     private int LastMob = 0;
