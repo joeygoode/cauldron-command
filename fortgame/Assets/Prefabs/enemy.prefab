@@ -39,7 +39,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b520af50e09d4c48b79ef881f709837, type: 2}
+  m_Controller: {fileID: 9100000, guid: 58a817e15b4d5da45a1f4be88cd9e668, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -56,15 +56,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbebe94770003bc4abcc50bc974033e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 6
-  height: 8
-  squishiness: .5
-  walkSpeed: 50
+  width: 25
+  height: 34
+  squishiness: .300000012
+  walkSpeed: 200
   team: {fileID: 0}
   faction: 0
   hitPoints: 10
   attackPower: 1
-  attackSpeed: .5
+  attackSpeed: .200000003
   fortDamage: 5
   targetMob: {fileID: 0}
   y: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 4073571663
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 5b1bfe765dfb6bc4aa7f4e7ad63c271d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2041dfa28894674e8751930a05ac464, type: 3}
   m_Color: {r: .779411793, g: .0745025724, b: .0745025724, a: 1}
 --- !u!1001 &100100000
 Prefab:
