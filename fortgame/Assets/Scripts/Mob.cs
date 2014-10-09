@@ -7,6 +7,7 @@ public class Mob : MonoBehaviour {
     public float height = 10; //height used for stacking
     public float squishiness = 0.5f; //how much it squishes when stacked
     public float walkSpeed = 30.0f;
+    public float walkSpeedRandomness = 0.1f; //how random walkspeed is.
     public Team team;
     [HideInInspector] public int faction = 0;
     public int hitPoints = 10;
@@ -28,8 +29,8 @@ public class Mob : MonoBehaviour {
         GetComponent<SpriteRenderer>().color = team.Color;
 
         //for fun
-        walkSpeed = walkSpeed * Random.value;
-        xScale += Random.value * 3;
+        walkSpeed = walkSpeed * (1 + walkSpeedRandomness * (Random.value - 0.5f));
+        xScale += Random.value;
         width = width * xScale;
         height = height * xScale;
 
@@ -59,7 +60,7 @@ public class Mob : MonoBehaviour {
         //update collision box
         box.FixedUpdate();
         //adjust sprite transform
-        transform.position = new Vector3(box.x + (width / 2), y, -y / 1000);
+        transform.position = new Vector3(box.x + (box.width / 2), y, -y / 1000);
         transform.localScale = new Vector3(xScale * team.Direction, (1 - squish) * xScale, 1);
         //attack
         if (attackTimer > 0) {

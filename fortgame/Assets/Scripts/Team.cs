@@ -20,7 +20,9 @@ public class Team : MonoBehaviour {
     public PlayerController Player;
     //Text display objects
     private GUIText Score;
-    private int LastMob = 0;
+    //mob spawning (temporary until cauldrons implemented)
+    public float spawnRate = 0.5f;
+    private float mobTimer = 0;
 	// Use this for initialization
 	void Start () {
         fort = FortObj.GetComponent<Fort>();
@@ -37,7 +39,8 @@ public class Team : MonoBehaviour {
     void FixedUpdate()
     {
         StackMobs();
-
+        SpawnMobs();
+        RemoveDead();
     }
 
     private void StackMobs()
@@ -100,16 +103,16 @@ public class Team : MonoBehaviour {
     }
 
     public void SpawnMobs () {
-        if (LastMob == 0)
+        if (mobTimer <= 0)
         {
             Transform t = fort.GetComponentInParent<Transform>();
             GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
             Mob m = g.GetComponent<Mob>();
             m.team = this;
             mobs.Add(m);
-            LastMob = (int)(Random.value) % 60 + 100;
+            mobTimer += spawnRate;
         } else {
-            LastMob--;
+            mobTimer -= Time.fixedDeltaTime;
         }
     }
 

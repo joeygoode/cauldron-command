@@ -79,13 +79,10 @@ public class Game : MonoBehaviour {
 
     void FixedUpdate () {
         if (gameRunning) {
-            left.SpawnMobs();
-            right.SpawnMobs();
 
             left.CollideWithFort(right.fort);
             right.CollideWithFort(left.fort);
-            left.RemoveDead();
-            right.RemoveDead();
+
             //collide mobs with each other
             foreach (Mob m1 in left.mobs)
             {
@@ -95,9 +92,18 @@ public class Game : MonoBehaviour {
                     {
                         m1.targetMob = m2;
                         m2.targetMob = m1;
+                        if (m1.box.velocity == 0)
+                        {
+                            m2.box.x = m1.box.x + m1.box.width;
+                        }
+                        if (m2.box.velocity == 0)
+                        {
+                            m1.box.x = m2.box.x - m1.box.width;
+                        }
                     }
                 }
             }
+            //spawn resources
             if (resources.Count > maxFreeResources) {
             } else if (resourceSpawnCountdown < 0) {
                 SpawnResource();
