@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: ff0b29d0ab9d75046a09d785c20c8ab1
+guid: 1bc23e8bb06487744b8c37355e40084b
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: enemy_orange
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +25,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

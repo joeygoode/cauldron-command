@@ -5,22 +5,10 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hunchbutt_animator
+  m_Name: Skeleton_animator
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: isWalking
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: animTimer
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: isHolding
+  - m_Name: isAttacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -45,36 +33,36 @@ Transition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110232302}
-  m_DstState: {fileID: 110200000}
+  m_SrcState: {fileID: 110200000}
+  m_DstState: {fileID: 110290993}
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: animTimer
+    m_ConditionEvent: isAttacking
     m_EventTreshold: 0
     m_ExitTime: 1
-  m_Atomic: 0
+  m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110109650
+--- !u!1101 &110124293
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110232302}
+  m_SrcState: {fileID: 110290993}
+  m_DstState: {fileID: 110200000}
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: animTimer
+    m_ConditionEvent: isAttacking
     m_EventTreshold: 0
     m_ExitTime: 1
-  m_Atomic: 0
+  m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
@@ -83,28 +71,28 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hunch_walk
-  m_Speed: 1
+  m_Name: skeleton_walk
+  m_Speed: .400000006
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 5318692a29932b642a3d8690df39502d, type: 2}
+  - {fileID: 7400000, guid: 3cc87e9ac0963a94784e8d5c9d745a2d, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 252, y: 72, z: 0}
+  m_Position: {x: 48, y: 48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110232302
+--- !u!1102 &110290993
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hunch_stand
-  m_Speed: .200000003
+  m_Name: skeleton_attack
+  m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: dbdb96b6d88d8f6428a8d734ae6b1ad8, type: 2}
+  - {fileID: 7400000, guid: fd7b14b1422f11c4b85808c7a9374d22, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 24, y: 72, z: 0}
+  m_Position: {x: 48, y: 108, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -115,24 +103,21 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110232302}
+  m_DefaultState: {fileID: 110200000}
   m_States:
   - {fileID: 110200000}
-  - {fileID: 110232302}
+  - {fileID: 110290993}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 110232302}
+      first: {fileID: 110290993}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110124293}
     data:
       first: {fileID: 110200000}
       second:
-      - {fileID: 110109650}
+      - {fileID: 110100000}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 48, y: 12, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

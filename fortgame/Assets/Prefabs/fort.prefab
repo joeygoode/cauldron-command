@@ -40,11 +40,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2a8b7011ec12346b1d0094f5d5c34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 100
+  maxHitpoints: 100
   width: 32
   faction: 0
   cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
-  actualHP: 0
+  hitpoints: 100
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -65,7 +65,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 3167093033
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65ba49f16eaba75488777d9c35bff7aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cff412c4caf86ae4b9c2518181b16885, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

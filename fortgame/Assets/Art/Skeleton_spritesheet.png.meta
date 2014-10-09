@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 5b1bfe765dfb6bc4aa7f4e7ad63c271d
+guid: c2041dfa28894674e8751930a05ac464
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy
-    21300002: enemy_0
-    21300004: enemy_1
-    21300006: enemy_2
-    21300008: enemy_3
+    21300000: Skeleton_spritesheet_0
+    21300002: Skeleton_spritesheet_1
+    21300004: Skeleton_spritesheet_2
+    21300006: Skeleton_spritesheet_3
+    21300008: Skeleton_spritesheet_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,43 +48,53 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: enemy_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 8
-        width: 8
-        height: 8
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 8
-        width: 8
-        height: 8
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_2
+    - name: Skeleton_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 28
+        height: 36
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_3
+    - name: Skeleton_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 8
+        x: 28
         y: 0
-        width: 8
-        height: 8
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 28
+        height: 36
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
