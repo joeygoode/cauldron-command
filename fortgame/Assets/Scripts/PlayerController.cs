@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour {
             else 
             {
                 heldResource.Drop();
+                game.AddResource(heldResource);
                 heldResource = null;
                 animationTimer = putDownDuration;
                 animator.SetBool("isLifting", false);
