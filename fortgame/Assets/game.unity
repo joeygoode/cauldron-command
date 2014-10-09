@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: .737930775, g: 0, b: 1, a: 1}
   direction: 1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   mobs: []
@@ -111,7 +111,7 @@ MonoBehaviour:
   scoreObj: {fileID: 1925439084}
   fort: {fileID: 0}
   player: {fileID: 0}
-  spawnRate: .5
+  spawnRate: 2
 --- !u!4 &123421536
 Transform:
   m_ObjectHideFlags: 0
@@ -547,6 +547,18 @@ Prefab:
       propertyPath: direction
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.g
+      value: .517241359
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
   m_RootGameObject: {fileID: 1702375664}
@@ -653,8 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkAxis: P2Horizontal
   digButton: P2Dig
-  pickUpDuration: 2
-  putDownDuration: 2
+  pickUpDuration: .200000003
+  putDownDuration: .100000001
   game: {fileID: 0}
 --- !u!95 &1376002636
 Animator:
@@ -920,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 1, g: .517241359, b: 0, a: 1}
   direction: -1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   mobs: []
@@ -929,7 +941,7 @@ MonoBehaviour:
   scoreObj: {fileID: 1676552709}
   fort: {fileID: 0}
   player: {fileID: 0}
-  spawnRate: .5
+  spawnRate: 2
 --- !u!4 &1702375666
 Transform:
   m_ObjectHideFlags: 0
@@ -1271,6 +1283,18 @@ Prefab:
       objectReference: {fileID: 1925439084}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.r
+      value: .737930775
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

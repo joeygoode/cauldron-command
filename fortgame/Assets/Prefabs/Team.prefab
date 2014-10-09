@@ -39,14 +39,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 0, b: 0, a: 0}
-  Direction: 0
+  color: {r: 1, g: 0, b: 0, a: 1}
+  direction: 0
   enemyPrefab: {fileID: 0}
   mobs: []
-  FortObj: {fileID: 0}
-  PlayerObj: {fileID: 0}
-  ScoreObj: {fileID: 0}
+  fortObj: {fileID: 0}
+  playerObj: {fileID: 0}
+  scoreObj: {fileID: 0}
   fort: {fileID: 0}
+  player: {fileID: 0}
+  spawnRate: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
