@@ -4,35 +4,43 @@ using System.Collections.Generic;
 
 public class Team : MonoBehaviour {
     //strings for getting the game objects placed in the scene
-    public Color Color;
-    public int Direction;
+    public Color color = Color.red;
+    public int direction;
     // Ugly, need a better way to do this
     public GameObject enemyPrefab;
 
     public List<Mob> mobs = new List<Mob>();
     //GameObjects in the scene
-    public GameObject FortObj;
-    public GameObject PlayerObj;
-    public GameObject ScoreObj;
+    public GameObject fortObj;
+    public GameObject playerObj;
+    public GameObject scoreObj;
     //Fort script objects
-    [HideInInspector] public Fort fort;
+    [HideInInspector] 
+    public Fort fort;
     //Character script objects
-    public PlayerController Player;
+    [HideInInspector] 
+    public PlayerController player;
     //Text display objects
-    private GUIText Score;
+    private GUIText score;
     //mob spawning (temporary until cauldrons implemented)
     public float spawnRate = 0.5f;
     private float mobTimer = 0;
+
+    //this initializes before start
+    void Awake()
+    {
+        fort = fortObj.GetComponent<Fort>();
+        player = playerObj.GetComponent<PlayerController>();
+        score = scoreObj.GetComponent<GUIText>();
+    }
+
 	// Use this for initialization
 	void Start () {
-        fort = FortObj.GetComponent<Fort>();
-        Player = PlayerObj.GetComponent<PlayerController>();
-        Score = ScoreObj.GetComponent<GUIText>();
 	}
 
     // Update is called once per frame
     void Update () {
-        Score.text = "HP: " + fort.hitpoints;
+        score.text = "HP: " + fort.hitpoints;
     }
 
     // Fixed Update is called 
@@ -111,9 +119,8 @@ public class Team : MonoBehaviour {
             m.team = this;
             mobs.Add(m);
             mobTimer += spawnRate;
-        } else {
-            mobTimer -= Time.fixedDeltaTime;
         }
+        mobTimer -= Time.fixedDeltaTime;
     }
 
     public void CollideWithFort (Fort f) {

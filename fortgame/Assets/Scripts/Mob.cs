@@ -26,7 +26,7 @@ public class Mob : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<SpriteRenderer>().color = team.Color;
+        GetComponent<SpriteRenderer>().color = team.color;
 
         //for fun
         walkSpeed = walkSpeed * (1 + walkSpeedRandomness * (Random.value - 0.5f));
@@ -49,7 +49,7 @@ public class Mob : MonoBehaviour {
         //motion
         if (targetMob == null)
         {
-            box.velocity = walkSpeed * team.Direction;
+            box.velocity = walkSpeed * team.direction;
             animator.SetBool("isAttacking", false);
         }
         else
@@ -61,7 +61,7 @@ public class Mob : MonoBehaviour {
         box.FixedUpdate();
         //adjust sprite transform
         transform.position = new Vector3(box.x + (box.width / 2), y, -y / 1000);
-        transform.localScale = new Vector3(xScale * team.Direction, (1 - squish) * xScale, 1);
+        transform.localScale = new Vector3(xScale * team.direction, (1 - squish) * xScale, 1);
         //attack
         if (attackTimer > 0) {
             attackTimer -= Time.fixedDeltaTime;

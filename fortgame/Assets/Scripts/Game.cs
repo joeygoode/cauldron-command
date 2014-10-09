@@ -7,9 +7,9 @@ public class Game : MonoBehaviour {
     public Team left;
     public Team right;
     public GameObject resourcePrefab;
-    public float resourceSpawnRate;
-    public float resourceSpawnVariance;
-    public int maxFreeResources;
+    public float resourceSpawnRate = 2;
+    public float resourceSpawnVariance = 1;
+    public int maxFreeResources = 30;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -17,12 +17,12 @@ public class Game : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         ResetResourceCountdown();
+        left.player.game = this;
+        right.player.game = this;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        left.Player.game = this;
-        right.Player.game = this;
         float startButton = Input.GetAxisRaw("Start-Pause"); //has to be raw to work while paused
         if (startButton > 0.0)
         {
@@ -39,8 +39,9 @@ public class Game : MonoBehaviour {
             gameRunning = true;
         }
 
-        float resetButton = Input.GetAxis("Reset");
+        float resetButton = Input.GetAxisRaw("Reset");
         if (resetButton > 0.0) {
+            Time.timeScale = 1;
             Application.LoadLevel("mainmenu");
         }
 
