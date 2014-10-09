@@ -236,13 +236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d032004dcc8dc4da12839ec53a5fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
-  Left: {fileID: 123421535}
-  Right: {fileID: 1702375665}
-  ResourcePrefab: {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
-  ResourceSpawnRate: 5
-  ResourceSpawnVariance: 2.5
-  MaxFreeResources: 3
+  left: {fileID: 123421535}
+  right: {fileID: 1702375665}
+  resourcePrefab: {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
+  resourceSpawnRate: 0
+  resourceSpawnVariance: 0
+  maxFreeResources: 0
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -264,7 +263,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d270f57ca0cf7cf4eaaf585064c20455, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d270f57ca0cf7cf4eaaf585064c20455, type: 2}
@@ -394,7 +393,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8b415d609d1fd3c4a8269f49c089d009, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b415d609d1fd3c4a8269f49c089d009, type: 2}
@@ -489,7 +488,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: m_Name
@@ -1098,7 +1097,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a760a42cc04c4744a9445849b13d9e83, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a760a42cc04c4744a9445849b13d9e83, type: 2}
       propertyPath: m_LocalScale.x

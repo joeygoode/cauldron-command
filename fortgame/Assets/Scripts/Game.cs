@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Game : MonoBehaviour {
     // Game instances
-    public GameObject menu;
     public Team left;
     public Team right;
     public GameObject resourcePrefab;

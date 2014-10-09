@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 25
-  height: 34
+  height: 35
   squishiness: .300000012
   walkSpeed: 200
   team: {fileID: 0}
