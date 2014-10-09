@@ -40,4 +40,37 @@ public class OneDBox {
         }
         return false;
     }
+
+    public float overlapAmount(OneDBox box)
+    {
+        if (this.x > box.x)
+        {
+            //overlap enveloped
+            if (this.x + this.width < box.x + box.width)
+            {
+                if (this.width < box.width) { return this.width; }
+                else { return box.width; }
+            }
+            //overlap right
+            if (this.x < box.x + box.width)
+            {
+                return box.x + box.width - this.x;
+            }
+            //too far right
+            return 0;
+        }
+        //overlap enveloping
+        if (this.x + this.width > box.x + box.width)
+        {
+            if (this.width < box.width) { return this.width; }
+            else { return box.width; }
+        }
+        //overlap left
+        if (this.x + this.width > box.x)
+        {
+            return this.x + this.width - box.x;
+        }
+        return 0;
+    }
 }
+
