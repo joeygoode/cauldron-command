@@ -56,8 +56,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40dc46b9b9399e48b77d0396bada6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 50
   walkAxis: P1Horizontal
   digButton: P1Dig
+  pickUpDuration: .200000003
+  putDownDuration: .300000012
+  game: {fileID: 0}
+  pressingDig: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

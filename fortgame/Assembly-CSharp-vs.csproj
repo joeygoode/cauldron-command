@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\OneDBox.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Resource.cs" />
+     <Compile Include="Assets\Scripts\SacrificialAltar.cs" />
      <Compile Include="Assets\Scripts\Team.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
