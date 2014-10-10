@@ -14,6 +14,7 @@ public class Team : MonoBehaviour {
     public GameObject fortObj;
     public GameObject playerObj;
     public GameObject scoreObj;
+    public GameObject altarObj;
     //Fort script objects
     [HideInInspector] 
     public Fort fort;
@@ -22,6 +23,9 @@ public class Team : MonoBehaviour {
     public PlayerController player;
     //Text display objects
     private GUIText score;
+    //altar object
+    [HideInInspector] 
+    public SacrificialAltar altar;
     //mob spawning (temporary until cauldrons implemented)
     public float spawnRate = 0.5f;
     private float mobTimer = 0;
@@ -32,6 +36,7 @@ public class Team : MonoBehaviour {
         fort = fortObj.GetComponent<Fort>();
         player = playerObj.GetComponent<PlayerController>();
         score = scoreObj.GetComponent<GUIText>();
+        altar = altarObj.GetComponent<SacrificialAltar>();
     }
 
 	// Use this for initialization
@@ -47,7 +52,7 @@ public class Team : MonoBehaviour {
     void FixedUpdate()
     {
         StackMobs();
-        SpawnMobs();
+        //SpawnMobs();
         RemoveDead();
     }
 
@@ -121,6 +126,15 @@ public class Team : MonoBehaviour {
             mobTimer += spawnRate;
         }
         mobTimer -= Time.fixedDeltaTime;
+    }
+
+    public void SpawnMob(Resource resource)
+    {
+        Transform t = fort.GetComponentInParent<Transform>();
+        GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
+        Mob m = g.GetComponent<Mob>();
+        m.team = this;
+        mobs.Add(m);
     }
 
     public void CollideWithFort (Fort f) {
