@@ -10,7 +10,7 @@ enum PlayerState {
 
 public class PlayerController : MonoBehaviour {
 
-    private float walkSpeed = 50.0f;
+    public float walkSpeed = 100.0f;
     private float width = 10;
 
     public string walkAxis = "P1Horizontal";
@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour {
     public OneDBox box;
     [HideInInspector] 
     public Game game;
+    [HideInInspector]
+    public bool pressingDig;
 
     private Animator animator;
     private float animationTimer = 0.0f;
@@ -44,14 +46,21 @@ public class PlayerController : MonoBehaviour {
         }
 
         //check pick-up and put-down
+        pressingDig = false;
         if (Input.GetAxis(digButton) > 0 && animationTimer == 0)
         {
             if (heldResource == null) {
-                game.RemoveResource(this);
-                animationTimer = pickUpDuration;
-                animator.SetBool("isLifting", true); //do you even lift bro?
+                if (game.RemoveResource(this))
+                {
+                    animationTimer = pickUpDuration;
+                    animator.SetBool("isLifting", true); //do you even lift bro?
+                }
+                else
+                {
+                    pressingDig = true;
+                }
             }
-            else 
+            else
             {
                 heldResource.Drop();
                 game.AddResource(heldResource);
@@ -74,10 +83,10 @@ public class PlayerController : MonoBehaviour {
                 animator.SetBool("isWalking", true);
                 if (walkDir < 0)
                 {
-                    transform.localScale = new Vector3(-1, 1, 1);
+                    transform.localScale = new Vector3(-2, 2, 1);
                 } else if (walkDir > 0)
                 {
-                    transform.localScale = new Vector3(1, 1, 1);
+                    transform.localScale = new Vector3(2, 2, 1);
                 }
             } else
             {
@@ -98,6 +107,12 @@ public class PlayerController : MonoBehaviour {
     public void ReceiveResource(Resource r) {
         heldResource = r;
         heldResource.Pickup();
+    }
+
+    public void handleButtonPress()
+    {
+        animationTimer = putDownDuration;
+        animator.SetBool("isLifting", false);
     }
 
     //Fixed Update is called at a fixed timestep
