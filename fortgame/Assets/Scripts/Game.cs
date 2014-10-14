@@ -10,6 +10,7 @@ public class Game : MonoBehaviour {
     public float resourceSpawnRate = 2;
     public float resourceSpawnVariance = 1;
     public int maxFreeResources = 30;
+    public float resourceFortSpacing = 20;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -53,14 +54,14 @@ public class Game : MonoBehaviour {
     }
 
     void SpawnResource () {
-        float x = Random.Range(left.fort.box.x, right.fort.box.x);
+        float x = Random.Range(left.fort.box.x + left.fort.box.width + resourceFortSpacing, right.fort.box.x - resourceFortSpacing);
         GameObject g = (GameObject)Instantiate(resourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
         r.box.x = x;
         resources.Add(r);
     }
 
-    public void RemoveResource (PlayerController p) {
+    public bool RemoveResource (PlayerController p) {
         Resource removedResource = null;
         foreach (Resource r in resources) {
             if (r.box.overlap(p.box)) {
@@ -71,7 +72,9 @@ public class Game : MonoBehaviour {
         }
         if (removedResource != null) {
             resources.Remove(removedResource);
+            return true;
         }
+        return false;
     }
 
     public void AddResource (Resource r) {
@@ -104,6 +107,29 @@ public class Game : MonoBehaviour {
                     }
                 }
             }
+
+            //collide resources with altars
+            List<Resource> deadResources = new List<Resource>();
+            foreach (Resource r in resources)
+            {
+                if (r.box.overlap(left.altar.box))
+                {
+                    left.altar.recieveResource(r);
+                    deadResources.Add(r);
+                }
+                if (r.box.overlap(right.altar.box))
+                {
+                    right.altar.recieveResource(r);
+                    deadResources.Add(r);
+                }
+            }
+
+            foreach (Resource r in deadResources)
+            {
+                resources.Remove(r);
+                Destroy(r.gameObject);
+            }
+
             //spawn resources
             if (resources.Count > maxFreeResources) {
             } else if (resourceSpawnCountdown < 0) {

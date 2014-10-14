@@ -55,6 +55,10 @@ TagManager:
     userID: 1
     uniqueID: 4073571663
     locked: 0
+  - name: Resources
+    userID: 4
+    uniqueID: 2211981087
+    locked: 0
   - name: Character
     userID: 0
     uniqueID: 0
