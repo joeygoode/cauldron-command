@@ -6,11 +6,20 @@ public class OneDBox {
     public float x;
     public float velocity;
     public float width;
+    public int layer;
 
     public OneDBox (float x, float width, float velocity) {
         this.x = x;
         this.velocity = velocity;
         this.width = width;
+        this.layer = 0;
+    }
+
+    public OneDBox (float x, float width, float velocity, int layer) {
+        this.x = x;
+        this.velocity = velocity;
+        this.width = width;
+        this.layer = layer;
     }
 
     public void FixedUpdate () {
@@ -18,6 +27,10 @@ public class OneDBox {
     }
 
     public bool overlap (OneDBox box) {
+        if (this.layer != box.layer)
+        {
+            return false;
+        }
         if (this.x > box.x) {
             //overlap right
             if (this.x < box.x + box.width) {
