@@ -4,62 +4,57 @@ using System.Collections.Generic;
 
 public class Game : MonoBehaviour {
     // Game instances
-    public GameObject Menu;
-    public Team Left;
-    public Team Right;
-    public GameObject ResourcePrefab;
-    public float ResourceSpawnRate;
-    public float ResourceSpawnVariance;
-    public int MaxFreeResources;
+    public Team left;
+    public Team right;
+    public GameObject resourcePrefab;
+    public float resourceSpawnRate = 2;
+    public float resourceSpawnVariance = 1;
+    public int maxFreeResources = 30;
 
-    private bool GameRunning = true;
-    private float ResourceSpawnCountdown;
+    private bool gameRunning = true;
+    private float resourceSpawnCountdown;
     private List<Resource> resources = new List<Resource>();
 	// Use this for initialization
 	void Start () {
         ResetResourceCountdown();
+        left.player.game = this;
+        right.player.game = this;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Left.Player.game = this;
-        Right.Player.game = this;
         float startButton = Input.GetAxisRaw("Start-Pause"); //has to be raw to work while paused
         if (startButton > 0.0)
         {
             Time.timeScale = 0;
-            GameRunning = false;
+            gameRunning = false;
         } 
-        else if (Left.fort.IsDead() || Right.fort.IsDead()) {
+        else if (left.fort.IsDead() || right.fort.IsDead()) {
             Time.timeScale = 0;
-            GameRunning = false;
+            gameRunning = false;
         }
         else
         {
             Time.timeScale = 1;
-            GameRunning = true;
+            gameRunning = true;
         }
 
-        float resetButton = Input.GetAxis("Reset");
+        float resetButton = Input.GetAxisRaw("Reset");
         if (resetButton > 0.0) {
+            Time.timeScale = 1;
             Application.LoadLevel("mainmenu");
-        }
-
-        if (GameRunning) {
-            Left.SpawnMobs();
-            Right.SpawnMobs();
         }
 
 	}
 
     void ResetResourceCountdown () {
-        ResourceSpawnCountdown = Random.Range(ResourceSpawnRate - ResourceSpawnVariance,
-                                              ResourceSpawnRate + ResourceSpawnVariance);
+        resourceSpawnCountdown = Random.Range(resourceSpawnRate - resourceSpawnVariance,
+                                              resourceSpawnRate + resourceSpawnVariance);
     }
 
     void SpawnResource () {
-        float x = Random.Range(Left.fort.box.x, Right.fort.box.x);
-        GameObject g = (GameObject)Instantiate(ResourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
+        float x = Random.Range(left.fort.box.x, right.fort.box.x);
+        GameObject g = (GameObject)Instantiate(resourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
         r.box.x = x;
         resources.Add(r);
@@ -84,29 +79,38 @@ public class Game : MonoBehaviour {
     }
 
     void FixedUpdate () {
-        if (GameRunning) {
-            Left.CollideWithFort(Right.fort);
-            Right.CollideWithFort(Left.fort);
-            Left.RemoveDead();
-            Right.RemoveDead();
+        if (gameRunning) {
+
+            left.CollideWithFort(right.fort);
+            right.CollideWithFort(left.fort);
+
             //collide mobs with each other
-            foreach (Mob m1 in Left.mobs)
+            foreach (Mob m1 in left.mobs)
             {
-                foreach (Mob m2 in Right.mobs)
+                foreach (Mob m2 in right.mobs)
                 {
                     if (m1.box.overlap(m2.box))
                     {
                         m1.targetMob = m2;
                         m2.targetMob = m1;
+                        if (m1.box.velocity == 0)
+                        {
+                            m2.box.x = m1.box.x + m1.box.width;
+                        }
+                        if (m2.box.velocity == 0)
+                        {
+                            m1.box.x = m2.box.x - m1.box.width;
+                        }
                     }
                 }
             }
-            if (resources.Count > MaxFreeResources) {
-            } else if (ResourceSpawnCountdown < 0) {
+            //spawn resources
+            if (resources.Count > maxFreeResources) {
+            } else if (resourceSpawnCountdown < 0) {
                 SpawnResource();
                 ResetResourceCountdown();
             } else {
-                ResourceSpawnCountdown -= Time.fixedDeltaTime;
+                resourceSpawnCountdown -= Time.fixedDeltaTime;
             }
         }
     }

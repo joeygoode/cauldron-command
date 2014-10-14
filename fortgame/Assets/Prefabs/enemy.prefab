@@ -57,14 +57,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 25
-  height: 34
+  height: 35
   squishiness: .300000012
-  walkSpeed: 200
+  walkSpeed: 150
+  walkSpeedRandomness: .100000001
   team: {fileID: 0}
   faction: 0
   hitPoints: 10
   attackPower: 1
-  attackSpeed: .200000003
+  attackSpeed: .300000012
   fortDamage: 5
   targetMob: {fileID: 0}
   y: 0

@@ -102,15 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: .713894606, g: .33088237, b: 1, a: 1}
-  Direction: 1
+  color: {r: .737930775, g: 0, b: 1, a: 1}
+  direction: 1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   mobs: []
-  FortObj: {fileID: 325397108}
-  PlayerObj: {fileID: 1376002634}
-  ScoreObj: {fileID: 1925439084}
+  fortObj: {fileID: 325397108}
+  playerObj: {fileID: 1376002634}
+  scoreObj: {fileID: 1925439084}
   fort: {fileID: 0}
-  Player: {fileID: 0}
+  player: {fileID: 0}
+  spawnRate: 2
 --- !u!4 &123421536
 Transform:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &147612548
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &245772043
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,13 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d032004dcc8dc4da12839ec53a5fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
-  Left: {fileID: 123421535}
-  Right: {fileID: 1702375665}
-  ResourcePrefab: {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
-  ResourceSpawnRate: 5
-  ResourceSpawnVariance: 2.5
-  MaxFreeResources: 3
+  left: {fileID: 123421535}
+  right: {fileID: 1702375665}
+  resourcePrefab: {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
+  resourceSpawnRate: 2
+  resourceSpawnVariance: 1
+  maxFreeResources: 30
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1001 &305744425
 Prefab:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d270f57ca0cf7cf4eaaf585064c20455, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d270f57ca0cf7cf4eaaf585064c20455, type: 2}
@@ -377,7 +377,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3ed39890f6626c046baca70814b1b761, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -394,7 +394,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8b415d609d1fd3c4a8269f49c089d009, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b415d609d1fd3c4a8269f49c089d009, type: 2}
@@ -451,7 +451,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1001 &1314764912
 Prefab:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: m_Name
@@ -530,6 +530,34 @@ Prefab:
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: fortObj
+      value: 
+      objectReference: {fileID: 1315495736}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 147612548}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: scoreObj
+      value: 
+      objectReference: {fileID: 1676552709}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: direction
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.g
+      value: .517241359
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
@@ -604,7 +632,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1376002634
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,8 +665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkAxis: P2Horizontal
   digButton: P2Dig
-  pickUpDuration: 2
-  putDownDuration: 2
+  pickUpDuration: .200000003
+  putDownDuration: .100000001
   game: {fileID: 0}
 --- !u!95 &1376002636
 Animator:
@@ -690,7 +718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1509489656
 Prefab:
   m_ObjectHideFlags: 0
@@ -728,7 +756,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
       propertyPath: m_Name
@@ -904,15 +932,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 1, g: .724137723, b: 0, a: 1}
-  Direction: -1
+  color: {r: 1, g: .517241359, b: 0, a: 1}
+  direction: -1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   mobs: []
-  FortObj: {fileID: 1315495736}
-  PlayerObj: {fileID: 147612548}
-  ScoreObj: {fileID: 1676552709}
+  fortObj: {fileID: 1315495736}
+  playerObj: {fileID: 147612548}
+  scoreObj: {fileID: 1676552709}
   fort: {fileID: 0}
-  Player: {fileID: 0}
+  player: {fileID: 0}
+  spawnRate: 2
 --- !u!4 &1702375666
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,7 +1075,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bdc85eb8ee9ab4e4f9f3eda5d57d8726, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bdc85eb8ee9ab4e4f9f3eda5d57d8726, type: 2}
       propertyPath: m_LocalScale.x
@@ -1098,7 +1127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a760a42cc04c4744a9445849b13d9e83, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a760a42cc04c4744a9445849b13d9e83, type: 2}
       propertyPath: m_LocalScale.x
@@ -1198,7 +1227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: m_Name
@@ -1238,6 +1267,34 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: fortObj
+      value: 
+      objectReference: {fileID: 325397108}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 1376002634}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: scoreObj
+      value: 
+      objectReference: {fileID: 1925439084}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.r
+      value: .737930775
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
+      propertyPath: color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
