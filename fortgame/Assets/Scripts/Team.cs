@@ -52,7 +52,6 @@ public class Team : MonoBehaviour {
     void FixedUpdate()
     {
         StackMobs();
-        //SpawnMobs();
         RemoveDead();
     }
 
@@ -113,19 +112,6 @@ public class Team : MonoBehaviour {
                 }
             }
         }
-    }
-
-    public void SpawnMobs () {
-        if (mobTimer <= 0)
-        {
-            Transform t = fort.GetComponentInParent<Transform>();
-            GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
-            Mob m = g.GetComponent<Mob>();
-            m.team = this;
-            mobs.Add(m);
-            mobTimer += spawnRate;
-        }
-        mobTimer -= Time.fixedDeltaTime;
     }
 
     public void SpawnMob(Resource resource)
