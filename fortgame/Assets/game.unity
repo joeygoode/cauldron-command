@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 123421535}
   right: {fileID: 1702375665}
-  resourcePrefab: {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
+  resourcePrefab: {fileID: 0}
   resourceSpawnRate: .699999988
   resourceSpawnVariance: .300000012
   maxFreeResources: 15
@@ -309,7 +309,7 @@ MonoBehaviour:
   maxHitpoints: 100
   width: 372
   faction: 0
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
+  cauldronPrefab: {fileID: 0}
   hitpoints: 100
 --- !u!212 &325397110
 SpriteRenderer:
@@ -691,7 +691,7 @@ MonoBehaviour:
   maxHitpoints: 100
   width: 372
   faction: 1
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
+  cauldronPrefab: {fileID: 0}
   hitpoints: 100
 --- !u!212 &1315495738
 SpriteRenderer:
