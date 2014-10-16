@@ -7,6 +7,10 @@ TextureImporter:
     21300004: Skeleton_spritesheet_2
     21300006: Skeleton_spritesheet_3
     21300008: Skeleton_spritesheet_4
+    21300010: Skeleton_spritesheet_5
+    21300012: Skeleton_spritesheet_6
+    21300014: Skeleton_spritesheet_7
+    21300016: Skeleton_spritesheet_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -92,6 +96,46 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
+        y: 0
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Skeleton_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 224
         y: 0
         width: 28
         height: 36
