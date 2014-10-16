@@ -162,7 +162,7 @@ MonoBehaviour:
   pickUpDuration: .200000003
   putDownDuration: .300000012
   game: {fileID: 0}
-  pressingDig: 0
+  team: {fileID: 0}
 --- !u!95 &147612550
 Animator:
   serializedVersion: 3
@@ -248,6 +248,7 @@ MonoBehaviour:
   resourceSpawnVariance: .300000012
   maxFreeResources: 15
   resourceFortSpacing: 100
+  background: {fileID: 1807020374}
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -763,7 +764,7 @@ MonoBehaviour:
   pickUpDuration: .200000003
   putDownDuration: .300000012
   game: {fileID: 0}
-  pressingDig: 0
+  team: {fileID: 0}
 --- !u!95 &1376002636
 Animator:
   serializedVersion: 3

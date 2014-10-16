@@ -10,6 +10,7 @@ public class Game : MonoBehaviour {
     public float resourceSpawnVariance = 1;
     public int maxFreeResources = 30;
     public float resourceFortSpacing = 20;
+    public GameObject background;
     public List<GameObject> resourceTypes;
 
     private bool gameRunning = true;
@@ -47,6 +48,24 @@ public class Game : MonoBehaviour {
         }
 
 	}
+
+    public bool IsValidMove (Team t, OneDBox b) {
+        b.FixedUpdate();
+        float width = background.GetComponent<SpriteRenderer>().sprite.rect.width;
+        float center = background.GetComponent<Transform>().position.x;
+        if ( b.x > center + width / 2 || b.x < -1 * (center + width / 2) )
+        {
+            return false;
+        }
+        else if (t.Equals(right))
+        {
+            return !left.fort.box.overlap(b);
+        }
+        else
+        {
+            return !right.fort.box.overlap(b);
+        }
+    }
 
     void ResetResourceCountdown () {
         resourceSpawnCountdown = Random.Range(resourceSpawnRate - resourceSpawnVariance,
