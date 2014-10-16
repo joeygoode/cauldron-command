@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Resource
+  m_Name: Bone Resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,6 +42,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 10
   carriedResourceHeight: 40
+  tombstone: {fileID: 0}
+  resource: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

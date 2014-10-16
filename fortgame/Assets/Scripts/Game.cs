@@ -6,11 +6,11 @@ public class Game : MonoBehaviour {
     // Game instances
     public Team left;
     public Team right;
-    public GameObject resourcePrefab;
     public float resourceSpawnRate = 2;
     public float resourceSpawnVariance = 1;
     public int maxFreeResources = 30;
     public float resourceFortSpacing = 20;
+    public List<GameObject> resourceTypes;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -55,7 +55,7 @@ public class Game : MonoBehaviour {
 
     void SpawnResource () {
         float x = Random.Range(left.fort.box.x + left.fort.box.width + resourceFortSpacing, right.fort.box.x - resourceFortSpacing);
-        GameObject g = (GameObject)Instantiate(resourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
+        GameObject g = (GameObject)Instantiate(resourceTypes[(int) Random.Range(0,resourceTypes.Count)], new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
         r.box.x = x;
         resources.Add(r);
