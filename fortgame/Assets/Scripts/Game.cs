@@ -11,6 +11,7 @@ public class Game : MonoBehaviour {
     public float resourceSpawnVariance = 1;
     public int maxFreeResources = 30;
     public float resourceFortSpacing = 20;
+    public GameObject background;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -50,7 +51,9 @@ public class Game : MonoBehaviour {
 
     public bool IsValidMove (Team t, OneDBox b) {
         b.FixedUpdate();
-        if (b.x > 950.0 || b.x < -950.0)
+        float width = background.GetComponent<SpriteRenderer>().sprite.rect.width;
+        float center = background.GetComponent<Transform>().position.x;
+        if ( b.x > center + width / 2 || b.x < -1 * (center + width / 2) )
         {
             return false;
         }
