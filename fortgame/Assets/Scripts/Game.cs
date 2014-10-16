@@ -48,6 +48,22 @@ public class Game : MonoBehaviour {
 
 	}
 
+    public bool IsValidMove (Team t, OneDBox b) {
+        b.FixedUpdate();
+        if (b.x > 950.0 || b.x < -950.0)
+        {
+            return false;
+        }
+        else if (t.Equals(right))
+        {
+            return !left.fort.box.overlap(b);
+        }
+        else
+        {
+            return !right.fort.box.overlap(b);
+        }
+    }
+
     void ResetResourceCountdown () {
         resourceSpawnCountdown = Random.Range(resourceSpawnRate - resourceSpawnVariance,
                                               resourceSpawnRate + resourceSpawnVariance);

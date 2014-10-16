@@ -35,6 +35,7 @@ public class Team : MonoBehaviour {
     {
         fort = fortObj.GetComponent<Fort>();
         player = playerObj.GetComponent<PlayerController>();
+        player.team = this;
         score = scoreObj.GetComponent<GUIText>();
         altar = altarObj.GetComponent<SacrificialAltar>();
     }

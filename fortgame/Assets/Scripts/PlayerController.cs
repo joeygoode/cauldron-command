@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour {
     public OneDBox box;
     [HideInInspector] 
     public Game game;
+    [HideInInspector]
+    public Team team;
 
     private Animator animator;
     private float animationTimer = 0.0f;
@@ -69,7 +71,15 @@ public class PlayerController : MonoBehaviour {
             //input
             float walkDir = Input.GetAxis(walkAxis);
             //physics
-            box.velocity = walkDir * walkSpeed;
+            OneDBox next = new OneDBox(box.x, box.width, walkDir * walkSpeed);
+            if ( game.IsValidMove(team,next) )
+            {
+                box.velocity = next.velocity;
+            }
+            else
+            {
+                box.velocity = 0;
+            }
             //animation
             if (walkDir != 0)
             {
