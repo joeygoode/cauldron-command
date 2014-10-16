@@ -311,6 +311,7 @@ MonoBehaviour:
   cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
+  maxFloors: 5
   floorProgress: 0
   floorProgressRequired: 100
   roof: {fileID: 662549671}
@@ -863,6 +864,7 @@ MonoBehaviour:
   cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
+  maxFloors: 5
   floorProgress: 0
   floorProgressRequired: 100
   roof: {fileID: 678922672}
