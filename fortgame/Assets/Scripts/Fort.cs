@@ -5,6 +5,7 @@ public class Fort : MonoBehaviour {
     
     public int maxHitpoints = 100;    
     public float width = 32;
+    [HideInInspector]
     public int direction = 1;
     public GameObject cauldronPrefab;
     public GameObject floorPrefab;
@@ -12,7 +13,7 @@ public class Fort : MonoBehaviour {
     public int maxFloors = 5;
     public int floorProgress = 0;
     public int floorProgressRequired = 100;
-    private List<GameObject> floorObjects;
+    private List<GameObject> floorObjects = new List<GameObject>();
     public GameObject roof;
     public float floorHeight = 50;
     public float baseHeight = 100;
@@ -29,7 +30,6 @@ public class Fort : MonoBehaviour {
 	void Start () {
         box = new OneDBox(transform.position.x - width / 2, width, 0);
         hitpoints = maxHitpoints;
-        floorObjects = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
