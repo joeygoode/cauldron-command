@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour {
     public OneDBox box;
     [HideInInspector] 
     public Game game;
-    [HideInInspector]
-    public bool pressingDig;
 
     private Animator animator;
     private float animationTimer = 0.0f;
@@ -46,7 +44,6 @@ public class PlayerController : MonoBehaviour {
         }
 
         //check pick-up and put-down
-        pressingDig = false;
         if (Input.GetAxis(digButton) > 0 && animationTimer == 0)
         {
             if (heldResource == null) {
@@ -54,10 +51,6 @@ public class PlayerController : MonoBehaviour {
                 {
                     animationTimer = pickUpDuration;
                     animator.SetBool("isLifting", true); //do you even lift bro?
-                }
-                else
-                {
-                    pressingDig = true;
                 }
             }
             else
