@@ -162,7 +162,7 @@ MonoBehaviour:
   pickUpDuration: .200000003
   putDownDuration: .300000012
   game: {fileID: 0}
-  pressingDig: 0
+  team: {fileID: 0}
 --- !u!95 &147612550
 Animator:
   serializedVersion: 3
@@ -243,11 +243,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 123421535}
   right: {fileID: 1702375665}
-  resourcePrefab: {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
   resourceSpawnRate: .699999988
   resourceSpawnVariance: .300000012
   maxFreeResources: 15
   resourceFortSpacing: 100
+  background: {fileID: 1807020374}
+  resourceTypes: []
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -943,7 +944,7 @@ MonoBehaviour:
   pickUpDuration: .200000003
   putDownDuration: .300000012
   game: {fileID: 0}
-  pressingDig: 0
+  team: {fileID: 0}
 --- !u!95 &1376002636
 Animator:
   serializedVersion: 3
