@@ -73,8 +73,13 @@ public class Game : MonoBehaviour {
     }
 
     void SpawnResource () {
-        float x = Random.Range(left.fort.box.x + left.fort.box.width + resourceFortSpacing, right.fort.box.x - resourceFortSpacing);
-        GameObject g = (GameObject)Instantiate(resourceTypes[(int) Random.Range(0,resourceTypes.Count)], new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
+        float x = Random.Range(
+            left.fort.box.x + left.fort.box.width + resourceFortSpacing, 
+            right.fort.box.x - resourceFortSpacing);
+        GameObject g = (GameObject)Instantiate(
+            resourceTypes[Random.Range(0,resourceTypes.Count)], 
+            new Vector3(x, 0, 0), 
+            new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
         r.box.x = x;
         resources.Add(r);
