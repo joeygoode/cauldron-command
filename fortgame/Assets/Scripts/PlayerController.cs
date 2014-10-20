@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector] 
     public Game game;
     [HideInInspector]
-    public bool pressingDig;
+    public Team team;
 
     private Animator animator;
     private float animationTimer = 0.0f;
@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour {
         }
 
         //check pick-up and put-down
-        pressingDig = false;
         if (Input.GetAxis(digButton) > 0 && animationTimer == 0)
         {
             if (heldResource == null) {
@@ -54,10 +53,6 @@ public class PlayerController : MonoBehaviour {
                 {
                     animationTimer = pickUpDuration;
                     animator.SetBool("isLifting", true); //do you even lift bro?
-                }
-                else
-                {
-                    pressingDig = true;
                 }
             }
             else
@@ -76,7 +71,15 @@ public class PlayerController : MonoBehaviour {
             //input
             float walkDir = Input.GetAxis(walkAxis);
             //physics
-            box.velocity = walkDir * walkSpeed;
+            OneDBox next = new OneDBox(box.x, box.width, walkDir * walkSpeed);
+            if ( game.IsValidMove(team,next) )
+            {
+                box.velocity = next.velocity;
+            }
+            else
+            {
+                box.velocity = 0;
+            }
             //animation
             if (walkDir != 0)
             {

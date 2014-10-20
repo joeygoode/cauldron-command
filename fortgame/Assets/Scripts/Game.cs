@@ -6,11 +6,12 @@ public class Game : MonoBehaviour {
     // Game instances
     public Team left;
     public Team right;
-    public GameObject resourcePrefab;
     public float resourceSpawnRate = 2;
     public float resourceSpawnVariance = 1;
     public int maxFreeResources = 30;
     public float resourceFortSpacing = 20;
+    public GameObject background;
+    public List<GameObject> resourceTypes;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -48,6 +49,24 @@ public class Game : MonoBehaviour {
 
 	}
 
+    public bool IsValidMove (Team t, OneDBox b) {
+        b.FixedUpdate();
+        float width = background.GetComponent<SpriteRenderer>().sprite.rect.width;
+        float center = background.GetComponent<Transform>().position.x;
+        if ( b.x > center + width / 2 || b.x < -1 * (center + width / 2) )
+        {
+            return false;
+        }
+        else if (t.Equals(right))
+        {
+            return !left.fort.box.overlap(b);
+        }
+        else
+        {
+            return !right.fort.box.overlap(b);
+        }
+    }
+
     void ResetResourceCountdown () {
         resourceSpawnCountdown = Random.Range(resourceSpawnRate - resourceSpawnVariance,
                                               resourceSpawnRate + resourceSpawnVariance);
@@ -55,7 +74,7 @@ public class Game : MonoBehaviour {
 
     void SpawnResource () {
         float x = Random.Range(left.fort.box.x + left.fort.box.width + resourceFortSpacing, right.fort.box.x - resourceFortSpacing);
-        GameObject g = (GameObject)Instantiate(resourcePrefab, new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
+        GameObject g = (GameObject)Instantiate(resourceTypes[(int) Random.Range(0,resourceTypes.Count)], new Vector3(x, 0, 0), new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
         r.box.x = x;
         resources.Add(r);
