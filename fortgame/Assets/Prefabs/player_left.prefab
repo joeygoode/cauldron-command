@@ -39,7 +39,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d818dea211fffd14b8a40ba2f2e96d4d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0b5ade68eaad36f489f65fdd95814537, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -59,10 +59,10 @@ MonoBehaviour:
   walkSpeed: 50
   walkAxis: P2Horizontal
   digButton: P2Dig
-  pickUpDuration: .200000003
+  pickUpDuration: .600000024
   putDownDuration: .300000012
   game: {fileID: 0}
-  pressingDig: 0
+  team: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: b70e8eb94ca56434b9f97bf675c5ae29, type: 3}
-  m_Color: {r: .360784322, g: .847058833, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dd03075946723e14885c8b1835d6d778, type: 3}
+  m_Color: {r: .832481205, g: .360784292, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
