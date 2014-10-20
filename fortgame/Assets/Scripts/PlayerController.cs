@@ -61,13 +61,13 @@ public class PlayerController : MonoBehaviour {
                 game.AddResource(heldResource);
                 heldResource = null;
                 animationTimer = putDownDuration;
-                animator.SetBool("isLifting", false);
             }
         }
 
         //check walk if we're not animating
         if (animationTimer == 0)
         {
+            animator.SetBool("isLifting", false);
             //input
             float walkDir = Input.GetAxis(walkAxis);
             //physics
@@ -86,10 +86,10 @@ public class PlayerController : MonoBehaviour {
                 animator.SetBool("isWalking", true);
                 if (walkDir < 0)
                 {
-                    transform.localScale = new Vector3(-2, 2, 1);
+                    transform.localScale = new Vector3(1, 1, 1);
                 } else if (walkDir > 0)
                 {
-                    transform.localScale = new Vector3(2, 2, 1);
+                    transform.localScale = new Vector3(-1, 1, 1);
                 }
             } else
             {
@@ -110,12 +110,6 @@ public class PlayerController : MonoBehaviour {
     public void ReceiveResource(Resource r) {
         heldResource = r;
         heldResource.Pickup();
-    }
-
-    public void handleButtonPress()
-    {
-        animationTimer = putDownDuration;
-        animator.SetBool("isLifting", false);
     }
 
     //Fixed Update is called at a fixed timestep
