@@ -175,7 +175,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: igor_lift
-  m_Speed: .600000024
+  m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: be20bd38d230d1b45b46c5cee57fb8ba, type: 2}

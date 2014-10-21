@@ -57,9 +57,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 50
+  liftHeight: 43
   walkAxis: P2Horizontal
   digButton: P2Dig
-  pickUpDuration: .600000024
+  pickUpDuration: .400000006
   putDownDuration: .300000012
   game: {fileID: 0}
   team: {fileID: 0}
