@@ -1,16 +1,11 @@
 fileFormatVersion: 2
-guid: b70e8eb94ca56434b9f97bf675c5ae29
+guid: c9dcb5c88800b9f4aa7cf11dc7a29039
 TextureImporter:
   fileIDToRecycleName:
-    21300000: hunchbutt
-    21300002: hunchbutt_0
-    21300004: hunchbutt_1
-    21300006: hunchbutt_2
-    21300008: hunchbutt_3
-    21300010: hunchbutt_4
-    21300012: hunchbutt_5
-    21300014: hunchbutt_6
-    21300016: hunchbutt_7
+    21300000: Rat_0
+    21300002: Rat_1
+    21300004: Rat_2
+    21300006: Rat_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -33,7 +28,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -52,83 +47,43 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: hunchbutt_0
+    - name: Rat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 15
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_2
+    - name: Rat_1
       rect:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 15
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_4
+    - name: Rat_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 15
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_5
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_6
+    - name: Rat_3
       rect:
         serializedVersion: 2
         x: 144
         y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: hunchbutt_7
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 15
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

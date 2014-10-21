@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 200
+  width: 27
   liftHeight: 43
   walkAxis: P1Horizontal
   digButton: P1Dig
@@ -943,6 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 200
+  width: 27
   liftHeight: 43
   walkAxis: P2Horizontal
   digButton: P2Dig
