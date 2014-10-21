@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public float walkSpeed = 100.0f;
-    private float width = 10;
+    public float width = 27;
     public float liftHeight = 43;
 
     public string walkAxis = "P1Horizontal";
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour {
         box.FixedUpdate();
         transform.position = new Vector3(box.x + (width / 2), transform.position.y, transform.position.z);
         if (heldResource != null) {
-            heldResource.box.x = box.x;
+            heldResource.box.x = box.x + box.width / 2;
         }
     }
 
