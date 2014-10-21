@@ -40,10 +40,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efe17db1bff59f4ea432dc92a6af4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
   carriedResourceHeight: 40
-  tombstone: {fileID: 0}
-  resource: {fileID: 0}
+  tombstone: {fileID: 21300000, guid: 5461493e5a89aa8418d457e76f10219c, type: 3}
+  resource: {fileID: 21300000, guid: 0d53168ef3d14cf449cc0b6e1c171f53, type: 3}
+  width: 24
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -64,7 +64,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2211981087
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5461493e5a89aa8418d457e76f10219c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d53168ef3d14cf449cc0b6e1c171f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

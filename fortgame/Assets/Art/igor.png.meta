@@ -1,16 +1,21 @@
 fileFormatVersion: 2
-guid: c2041dfa28894674e8751930a05ac464
+guid: dd03075946723e14885c8b1835d6d778
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Skeleton_spritesheet_0
-    21300002: Skeleton_spritesheet_1
-    21300004: Skeleton_spritesheet_2
-    21300006: Skeleton_spritesheet_3
-    21300008: Skeleton_spritesheet_4
-    21300010: Skeleton_spritesheet_5
-    21300012: Skeleton_spritesheet_6
-    21300014: Skeleton_spritesheet_7
-    21300016: Skeleton_spritesheet_8
+    21300000: igor_0
+    21300002: igor_1
+    21300004: igor_2
+    21300006: igor_3
+    21300008: igor_4
+    21300010: igor_5
+    21300012: igor_6
+    21300014: igor_7
+    21300016: igor_8
+    21300018: igor_9
+    21300020: igor_10
+    21300022: igor_11
+    21300024: igor_12
+    21300026: igor_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,93 +57,143 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Skeleton_spritesheet_0
+    - name: igor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_1
+    - name: igor_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 48
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_2
+    - name: igor_2
       rect:
         serializedVersion: 2
-        x: 56
+        x: 96
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_3
+    - name: igor_3
       rect:
         serializedVersion: 2
-        x: 84
+        x: 144
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_4
+    - name: igor_4
       rect:
         serializedVersion: 2
-        x: 112
+        x: 192
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_5
+    - name: igor_5
       rect:
         serializedVersion: 2
-        x: 140
+        x: 240
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_6
+    - name: igor_6
       rect:
         serializedVersion: 2
-        x: 168
+        x: 288
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_7
+    - name: igor_7
       rect:
         serializedVersion: 2
-        x: 196
+        x: 336
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Skeleton_spritesheet_8
+    - name: igor_8
       rect:
         serializedVersion: 2
-        x: 224
+        x: 384
         y: 0
-        width: 28
-        height: 36
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: igor_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: igor_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: igor_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: igor_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: igor_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

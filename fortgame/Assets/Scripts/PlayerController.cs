@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-enum PlayerState {
-    Idle,
-    PickUp,
-    Carry,
-    PutDown
-}
-
 public class PlayerController : MonoBehaviour {
 
     public float walkSpeed = 100.0f;
-    private float width = 10;
+    public float width = 27;
+    public float liftHeight = 43;
 
     public string walkAxis = "P1Horizontal";
     public string digButton = "P1Dig";
     public float pickUpDuration = 0.2f;
     public float putDownDuration = 0.1f;
+    //lifting position goes this much faster than lifting animation
+    private static float pickUpSpeedMultiplier = 3f;
 
     [HideInInspector]
     public OneDBox box;
@@ -28,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private float animationTimer = 0.0f;
     private Resource heldResource;
-
+    private bool isLiftingNotDropping = true;
 
     // Use this for initialization
     void Start () {
@@ -49,18 +45,22 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetAxis(digButton) > 0 && animationTimer == 0)
         {
             if (heldResource == null) {
+                //lift item
                 if (game.RemoveResource(this))
                 {
                     animationTimer = pickUpDuration;
+                    isLiftingNotDropping = true;
                     animator.SetBool("isLifting", true); //do you even lift bro?
                 }
             }
             else
             {
+                //drop item
                 heldResource.Drop();
                 game.AddResource(heldResource);
                 heldResource = null;
                 animationTimer = putDownDuration;
+                isLiftingNotDropping = false;
                 animator.SetBool("isLifting", false);
             }
         }
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour {
         //check walk if we're not animating
         if (animationTimer == 0)
         {
+            animator.SetBool("isLifting", false);
             //input
             float walkDir = Input.GetAxis(walkAxis);
             //physics
@@ -86,10 +87,10 @@ public class PlayerController : MonoBehaviour {
                 animator.SetBool("isWalking", true);
                 if (walkDir < 0)
                 {
-                    transform.localScale = new Vector3(-2, 2, 1);
+                    transform.localScale = new Vector3(1, 1, 1);
                 } else if (walkDir > 0)
                 {
-                    transform.localScale = new Vector3(2, 2, 1);
+                    transform.localScale = new Vector3(-1, 1, 1);
                 }
             } else
             {
@@ -109,13 +110,7 @@ public class PlayerController : MonoBehaviour {
 
     public void ReceiveResource(Resource r) {
         heldResource = r;
-        heldResource.Pickup();
-    }
-
-    public void handleButtonPress()
-    {
-        animationTimer = putDownDuration;
-        animator.SetBool("isLifting", false);
+        heldResource.Pickup(this);
     }
 
     //Fixed Update is called at a fixed timestep
@@ -123,7 +118,24 @@ public class PlayerController : MonoBehaviour {
         box.FixedUpdate();
         transform.position = new Vector3(box.x + (width / 2), transform.position.y, transform.position.z);
         if (heldResource != null) {
-            heldResource.box.x = box.x;
+            heldResource.box.x = box.x + box.width / 2;
         }
+    }
+
+    public float getLiftYCoordinate()
+    {
+        float pickupProgress = 0;
+        if (isLiftingNotDropping)
+        {
+            pickupProgress = (animationTimer / pickUpDuration);
+        }
+        else
+        {
+            pickupProgress =  (animationTimer / putDownDuration);
+        }
+        pickupProgress = (1 - pickupProgress) * pickUpSpeedMultiplier;
+        if (pickupProgress > 1) { pickupProgress = 1; }
+        return
+                this.transform.position.y + pickupProgress * liftHeight;
     }
 }
