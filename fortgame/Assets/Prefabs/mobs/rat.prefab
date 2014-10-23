@@ -12,7 +12,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: rat
   m_TagString: BlueMob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32, y: 0, z: 0}
+  m_LocalPosition: {x: 348.900696, y: 132.921875, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,7 +39,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58a817e15b4d5da45a1f4be88cd9e668, type: 2}
+  m_Controller: {fileID: 9100000, guid: ef7f2227c77b6b34bb5ec0cf3af89399, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -56,17 +56,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbebe94770003bc4abcc50bc974033e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 25
-  height: 35
+  width: 48
+  height: 15
   squishiness: .300000012
-  walkSpeed: 150
+  walkSpeed: 100
   walkSpeedRandomness: .100000001
   team: {fileID: 0}
   faction: 0
-  hitPoints: 10
+  hitPoints: 20
   attackPower: 1
-  attackSpeed: .300000012
-  fortDamage: 5
+  attackSpeed: .600000024
+  fortDamage: 8
   targetMob: {fileID: 0}
   y: 0
   squish: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 4073571663
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2041dfa28894674e8751930a05ac464, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9dcb5c88800b9f4aa7cf11dc7a29039, type: 3}
   m_Color: {r: .779411793, g: .0745025724, b: .0745025724, a: 1}
 --- !u!1001 &100100000
 Prefab:

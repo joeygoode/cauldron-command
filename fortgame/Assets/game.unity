@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: .737930775, g: 0, b: 1, a: 1}
+  color: {r: .888235211, g: .573529422, b: 1, a: 1}
   direction: 1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   mobs: []
@@ -253,7 +253,6 @@ MonoBehaviour:
   resourceTypes:
   - {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
   - {fileID: 100000, guid: ab556844dc9bf5f4086c3011e8d97540, type: 2}
-  - {fileID: 100000, guid: e0bc912cba35b2e4ea703a441c9b9155, type: 2}
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -311,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2a8b7011ec12346b1d0094f5d5c34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 100
+  maxHitpoints: 500
   width: 372
   direction: 1
   cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
@@ -820,11 +819,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: color.g
-      value: .517241359
+      value: .8154158
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: color.b
-      value: 0
+      value: .617647052
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: altarObj
@@ -864,7 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2a8b7011ec12346b1d0094f5d5c34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 100
+  maxHitpoints: 500
   width: 372
   direction: 1
   cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
@@ -1296,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddd362557f32e4ca0dd5a7d1b97ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: .517241359, b: 0, a: 1}
+  color: {r: 1, g: .8154158, b: .617647052, a: 1}
   direction: -1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   mobs: []
@@ -1712,11 +1711,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: color.r
-      value: .737930775
+      value: .888235211
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: color.g
-      value: 0
+      value: .573529422
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a7e97205056cedb49ad0cd76c4dabe58, type: 2}
       propertyPath: color.b

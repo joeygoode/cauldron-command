@@ -44,6 +44,7 @@ MonoBehaviour:
   tombstone: {fileID: 21300000, guid: 5461493e5a89aa8418d457e76f10219c, type: 3}
   resource: {fileID: 21300000, guid: a4408eb99335dc64cba4f1568c4d9da4, type: 3}
   width: 24
+  mobPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
