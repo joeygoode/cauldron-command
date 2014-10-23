@@ -120,7 +120,7 @@ public class Team : MonoBehaviour {
     public void SpawnMob(Resource resource)
     {
         Transform t = fort.GetComponentInParent<Transform>();
-        GameObject g = (GameObject)Instantiate(enemyPrefab, t.position, new Quaternion(0, 0, 0, 0));
+        GameObject g = (GameObject)Instantiate(resource.mobPrefab, t.position, new Quaternion(0, 0, 0, 0));
         Mob m = g.GetComponent<Mob>();
         m.team = this;
         mobs.Add(m);
