@@ -8,6 +8,7 @@ public class Mob : MonoBehaviour {
     public float squishiness = 0.5f; //how much it squishes when stacked
     public float walkSpeed = 30.0f;
     public float walkSpeedRandomness = 0.1f; //how random walkspeed is.
+    public float xScaleRandomness = 1f;
     public Team team;
     [HideInInspector] public int faction = 0;
     public int hitPoints = 10;
@@ -30,7 +31,7 @@ public class Mob : MonoBehaviour {
 
         //for fun
         walkSpeed = walkSpeed * (1 + walkSpeedRandomness * (Random.value - 0.5f));
-        xScale += Random.value;
+        xScale += Random.value * xScaleRandomness;
         width = width * xScale;
         height = height * xScale;
 

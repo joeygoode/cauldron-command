@@ -60,7 +60,8 @@ MonoBehaviour:
   height: 15
   squishiness: .300000012
   walkSpeed: 100
-  walkSpeedRandomness: .100000001
+  walkSpeedRandomness: .200000003
+  xScaleRandomness: 1
   team: {fileID: 0}
   faction: 0
   hitPoints: 20

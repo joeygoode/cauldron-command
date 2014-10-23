@@ -61,6 +61,7 @@ MonoBehaviour:
   squishiness: .300000012
   walkSpeed: 150
   walkSpeedRandomness: .100000001
+  xScaleRandomness: 0
   team: {fileID: 0}
   faction: 0
   hitPoints: 10
