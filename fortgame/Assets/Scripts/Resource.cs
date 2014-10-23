@@ -6,6 +6,7 @@ public class Resource : MonoBehaviour {
     public Sprite tombstone;
     public Sprite resource;
     public float width = 24;
+    public GameObject mobPrefab;
     private PlayerController playerCarryingMe;
     private float groundY = 0;
 
