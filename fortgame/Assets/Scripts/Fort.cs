@@ -52,8 +52,6 @@ public class Fort : MonoBehaviour {
     
     void FixedUpdate () {
         box.FixedUpdate();
-        //auto-gen floors until we put in poltergeists
-        floorProgress++;
         //build new floors
         if (floorProgress >= floorProgressRequired)
         {
