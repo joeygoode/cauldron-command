@@ -42,7 +42,6 @@ public class Team : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        fort.setColor(color);
         fort.direction = direction;
 	}
 

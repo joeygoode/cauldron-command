@@ -39,7 +39,6 @@ public class Fort : MonoBehaviour {
         if(floorObjects.Count < floors) {
             Vector3 floorPos = new Vector3(thisP.x + floorXOffset * direction, thisP.y + baseHeight + floorHeight * floorObjects.Count, thisP.z);
             GameObject floorObj = (GameObject)Instantiate(floorPrefab, floorPos, this.transform.rotation);
-            floorObj.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
             floorObjects.Add(floorObj);
         }
         if(floorObjects.Count > floors) {
@@ -68,15 +67,6 @@ public class Fort : MonoBehaviour {
 
     public void ResetHP () {
         hitpoints = maxHitpoints;
-    }
-
-    public void setColor(Color c)
-    {
-        this.GetComponent<SpriteRenderer>().color = c;
-        roof.GetComponent<SpriteRenderer>().color = c;
-        foreach (GameObject floorSprite in floorObjects) {
-            floorSprite.GetComponent<SpriteRenderer>().color = c;
-        }
     }
 
     public bool IsDead () {
