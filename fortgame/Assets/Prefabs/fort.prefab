@@ -52,7 +52,7 @@ MonoBehaviour:
   roof: {fileID: 0}
   floorHeight: 129
   baseHeight: 138
-  floorXOffset: -40
+  floorXOffset: 30
   hitpoints: 100
 --- !u!212 &21200000
 SpriteRenderer:
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 3167093033
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cff412c4caf86ae4b9c2518181b16885, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc9631582733f5d468f6b9ce00384e27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

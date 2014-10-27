@@ -32,7 +32,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: rat_walk
-  m_Speed: 1
+  m_Speed: .600000024
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 45821fcdfbe90164f938ae09ae6dd77d, type: 2}
