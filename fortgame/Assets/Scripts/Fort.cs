@@ -5,7 +5,7 @@ public class Fort : MonoBehaviour {
     
     public int maxHitpoints = 100;    
     public float width = 32;
-    [HideInInspector]
+    //[HideInInspector]
     public int direction = 1;
     public GameObject cauldronPrefab;
     public GameObject floorPrefab;
@@ -18,6 +18,10 @@ public class Fort : MonoBehaviour {
     public float floorHeight = 50;
     public float baseHeight = 100;
     public float floorXOffset = 30;
+    public float doorXPos = 192;
+    public float doorWidth = 37;
+    [HideInInspector]
+    public OneDBox doorBox = new OneDBox(0, 0, 0);
 
     //public List<Cauldron> cauldrons = new List<Cauldron>();
     
@@ -30,6 +34,16 @@ public class Fort : MonoBehaviour {
 	void Start () {
         box = new OneDBox(transform.position.x - width / 2, width, 0);
         hitpoints = maxHitpoints;
+        if (direction == 1)
+        {
+            Debug.Log("hi");
+            doorBox = new OneDBox(box.x + width - doorXPos - doorWidth, doorWidth, 0);
+        }
+        else
+        {
+            Debug.Log("bye");
+            doorBox = new OneDBox(box.x + doorXPos, doorWidth, 0);
+        }
 	}
 	
 	// Update is called once per frame
@@ -69,5 +83,31 @@ public class Fort : MonoBehaviour {
 
     public bool IsDead () {
         return hitpoints <= 0;
+    }
+
+    public int requestStairs(int level, OneDBox igorBox)
+    {
+        if (!igorBox.overlap(doorBox))
+        {
+            return -1;
+        }
+        if (level > floors)
+        {
+            return floors;
+        }
+        if (level <= 0)
+        {
+            return 0;
+        }
+        return level;
+    }
+
+    public float getFloorHeight(int level)
+    {
+        if (level == 0)
+        {
+            return this.transform.position.y;
+        }
+        return (level - 1) * floorHeight + baseHeight + this.transform.position.y;
     }
 }

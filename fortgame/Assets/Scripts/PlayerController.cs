@@ -8,9 +8,13 @@ public class PlayerController : MonoBehaviour {
     public float liftHeight = 43;
 
     public string walkAxis = "P1Horizontal";
+    public string stairsAxis = "P1Vertical";
     public string digButton = "P1Dig";
+
     public float pickUpDuration = 0.2f;
     public float putDownDuration = 0.1f;
+    public float stairsAnimateDuration = 0.2f;
+    public float stairsInsideDuration = 0.4f;
     //lifting position goes this much faster than lifting animation
     private static float pickUpSpeedMultiplier = 3f;
 
@@ -24,7 +28,13 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private float animationTimer = 0.0f;
     private Resource heldResource;
+
     private bool isLiftingNotDropping = true;
+    private bool isEnteringStairs = false;
+    private bool isInStairwell = false;
+    private bool isExitingStairs = false;
+
+    public int floorPos = 0;
 
     // Use this for initialization
     void Start () {
@@ -39,6 +49,30 @@ public class PlayerController : MonoBehaviour {
         if (animationTimer < 0)
         {
             animationTimer = 0;
+
+            //stairs animation switching
+            SpriteRenderer sprender = GetComponent<SpriteRenderer>();
+            if (isExitingStairs)
+            {
+                animator.SetBool("isExitingStairs", false);
+            }
+            if (isInStairwell)
+            {
+                animationTimer = stairsAnimateDuration;
+                sprender.enabled = true;
+                isInStairwell = false;
+                isExitingStairs = true;
+                animator.SetBool("isEnteringStairs", false);
+                animator.SetBool("isExitingStairs", true);
+                transform.position = new Vector3(transform.position.x, team.fort.getFloorHeight(floorPos), transform.position.z);
+            }
+            if (isEnteringStairs)
+            {
+                animationTimer = stairsInsideDuration;
+                isInStairwell = true;
+                isEnteringStairs = false;
+                sprender.enabled = false;
+            }
         }
 
         //check pick-up and put-down
@@ -63,6 +97,25 @@ public class PlayerController : MonoBehaviour {
                 isLiftingNotDropping = false;
                 animator.SetBool("isLifting", false);
             }
+        }
+
+        //check going up/down stairs
+        if (Input.GetAxis(stairsAxis) != 0 && animationTimer == 0 && team.fort.requestStairs(floorPos, box) != -1)
+        {
+            //go up or down
+            if (Input.GetAxis(stairsAxis) > 0)
+            {
+                floorPos = team.fort.requestStairs(floorPos + 1, box);
+            }
+            else
+            {
+                floorPos = team.fort.requestStairs(floorPos - 1, box);
+            }
+            //set animation/position
+            animationTimer = stairsAnimateDuration;
+            isEnteringStairs = true;
+            animator.SetBool("isEnteringStairs", true);
+            box.x = team.fort.doorBox.x + 3;
         }
 
         //check walk if we're not animating
