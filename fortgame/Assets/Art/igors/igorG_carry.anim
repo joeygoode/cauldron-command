@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: enemy_attack
+  m_Name: igorG_carry
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,9 +18,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300006, guid: 5b1bfe765dfb6bc4aa7f4e7ad63c271d, type: 3}
+      value: {fileID: 21300032, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
     - time: .0833333358
-      value: {fileID: 21300008, guid: 5b1bfe765dfb6bc4aa7f4e7ad63c271d, type: 3}
+      value: {fileID: 21300034, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
+    - time: .166666672
+      value: {fileID: 21300036, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
+    - time: .25
+      value: {fileID: 21300038, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -39,12 +43,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300006, guid: 5b1bfe765dfb6bc4aa7f4e7ad63c271d, type: 3}
-    - {fileID: 21300008, guid: 5b1bfe765dfb6bc4aa7f4e7ad63c271d, type: 3}
+    - {fileID: 21300032, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
+    - {fileID: 21300034, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
+    - {fileID: 21300036, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
+    - {fileID: 21300038, guid: 867801d0f1a192044a51a5460cc795b4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .166666672
+    m_StopTime: .333333343
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
