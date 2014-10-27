@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitpoints: 500
-  width: 32
+  width: 550
   direction: 1
   cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
@@ -53,6 +53,8 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
+  doorXPos: 322
+  doorWidth: 37
   hitpoints: 100
 --- !u!212 &21200000
 SpriteRenderer:
