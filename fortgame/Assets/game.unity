@@ -105,7 +105,7 @@ MonoBehaviour:
   color: {r: .888235211, g: .573529422, b: 1, a: 1}
   direction: 1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
-  mobs: []
+  units: []
   fortObj: {fileID: 325397108}
   playerObj: {fileID: 1376002634}
   scoreObj: {fileID: 1925439084}
@@ -253,6 +253,7 @@ MonoBehaviour:
   resourceTypes:
   - {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
   - {fileID: 100000, guid: ab556844dc9bf5f4086c3011e8d97540, type: 2}
+  - {fileID: 100000, guid: e0bc912cba35b2e4ea703a441c9b9155, type: 2}
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -317,8 +318,8 @@ MonoBehaviour:
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
   maxFloors: 5
-  floorProgress: 0
-  floorProgressRequired: 100
+  floorProgress: 5
+  floorProgressRequired: 10
   roof: {fileID: 662549671}
   floorHeight: 129
   baseHeight: 138
@@ -369,6 +370,10 @@ Prefab:
     - target: {fileID: 400000, guid: bdc85eb8ee9ab4e4f9f3eda5d57d8726, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: bdc85eb8ee9ab4e4f9f3eda5d57d8726, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.04962158
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdc85eb8ee9ab4e4f9f3eda5d57d8726, type: 2}
@@ -870,8 +875,8 @@ MonoBehaviour:
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
   maxFloors: 5
-  floorProgress: 0
-  floorProgressRequired: 100
+  floorProgress: 5
+  floorProgressRequired: 10
   roof: {fileID: 678922672}
   floorHeight: 129
   baseHeight: 138
@@ -1298,7 +1303,7 @@ MonoBehaviour:
   color: {r: 1, g: .8154158, b: .617647052, a: 1}
   direction: -1
   enemyPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
-  mobs: []
+  units: []
   fortObj: {fileID: 1315495736}
   playerObj: {fileID: 147612548}
   scoreObj: {fileID: 1676552709}
@@ -1505,7 +1510,7 @@ Transform:
   m_PrefabInternal: {fileID: 473727577}
   m_GameObject: {fileID: 1807020374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.04962158, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

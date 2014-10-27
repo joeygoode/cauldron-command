@@ -9,7 +9,7 @@ public class Team : MonoBehaviour {
     // Ugly, need a better way to do this
     public GameObject enemyPrefab;
 
-    public List<Mob> mobs = new List<Mob>();
+    public List<Unit> units = new List<Unit>();
     //GameObjects in the scene
     public GameObject fortObj;
     public GameObject playerObj;
@@ -64,30 +64,42 @@ public class Team : MonoBehaviour {
         // stack them in an animated way based on their position relative to their width/height
 
         //reset stacking vars
-        foreach (Mob m in mobs)
+        foreach (Unit u in units)
         {
+            Mob m = u as Mob;
+            if (m == null) {
+                continue;
+            }
             m.squish = 0;
             m.y = 0;
         }
 
         //convert to array to iterate over
-        Mob[] mobArr = mobs.ToArray();
+        Unit[] mobArr = units.ToArray();
         //collide every mob with every mob (except itself)
         //and only do it if there actually is more than 1 mob
         if (mobArr.Length > 1)
         {
             for (int i = 0; i < mobArr.Length - 1; i++)
             {
+                if ( mobArr[i].box == null ) {
+                    continue;
+                }
+                Mob m1 = (Mob) mobArr[i];
                 for (int j = i + 1; j < mobArr.Length; j++)
                 {
+                    if ( mobArr[j].box == null) {
+                        continue;
+                    }
+                    Mob m2 = (Mob) mobArr[j];
                     if (mobArr[i].box.overlap(mobArr[j].box))
                     {
                         //calculate ratio for squishiness/height boost
                         bool iThin = true;
-                        float thinner = mobArr[i].width;
-                        if (mobArr[j].width < thinner)
+                        float thinner = m1.width;
+                        if (m2.width < thinner)
                         {
-                            thinner = mobArr[j].width;
+                            thinner = m2.width;
                             iThin = false;
                         }
                         float overlapRatio = mobArr[i].box.overlapAmount(mobArr[j].box) / thinner;
@@ -96,17 +108,17 @@ public class Team : MonoBehaviour {
                         Mob thickMob;
                         if (iThin)
                         {
-                            thinMob = mobArr[i];
-                            thickMob = mobArr[j];
+                            thinMob = m1;
+                            thickMob = m2;
                         }
                         else
                         {
-                            thinMob = mobArr[j];
-                            thickMob = mobArr[i];
+                            thinMob = m2;
+                            thickMob = m1;
                         }
                         //set squishiness only if we are the "heaviest" thing squishing the mob.
                         //"heaviest" meaning "thing that's squishing it the most"
-                        if (overlapRatio > mobArr[i].squish)
+                        if (overlapRatio > m1.squish)
                         {
                             thickMob.squish = overlapRatio * thickMob.squishiness;
                         }
@@ -121,14 +133,18 @@ public class Team : MonoBehaviour {
     {
         Transform t = fort.GetComponentInParent<Transform>();
         GameObject g = (GameObject)Instantiate(resource.mobPrefab, t.position, new Quaternion(0, 0, 0, 0));
-        Mob m = g.GetComponent<Mob>();
-        m.team = this;
-        mobs.Add(m);
+        Unit u = g.GetComponent<Unit>();
+        u.team = this;
+        units.Add(u);
     }
 
     public void CollideWithFort (Fort f) {
-        foreach (Mob m in mobs)
+        foreach (Unit u in units)
         {
+            if (u.box == null) {
+                continue;
+            }
+            Mob m = (Mob) u;
             if (m.box.overlap(f.box))
             {
                 f.hitpoints -= m.fortDamage;
@@ -139,18 +155,18 @@ public class Team : MonoBehaviour {
 
     public void RemoveDead () {
         //destroy any mobs with 0 hitpoints
-        List<Mob> deadMobBuffer = new List<Mob>();
-        foreach (Mob m in mobs)
+        List<Unit> deadMobBuffer = new List<Unit>();
+        foreach (Unit u in units)
         {
-            if(m.hitPoints <= 0)
+            if(u.hitPoints <= 0)
             {
-                deadMobBuffer.Add(m);
+                deadMobBuffer.Add(u);
             }
         }
-        foreach (Mob m in deadMobBuffer)
+        foreach (Unit u in deadMobBuffer)
         {
-            mobs.Remove(m);
-            Destroy(m.gameObject);
+            units.Remove(u);
+            Destroy(u.gameObject);
         }
     }
 }

@@ -47,8 +47,8 @@ MonoBehaviour:
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
   maxFloors: 5
-  floorProgress: 0
-  floorProgressRequired: 100
+  floorProgress: 5
+  floorProgressRequired: 10
   roof: {fileID: 0}
   floorHeight: 129
   baseHeight: 138
