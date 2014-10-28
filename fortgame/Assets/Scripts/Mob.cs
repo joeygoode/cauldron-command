@@ -19,7 +19,7 @@ public class Mob : Unit {
     [HideInInspector] public float squish = 0;
     private Animator animator;
     //for fun
-    private float xScale = 1;
+    public float xScale = 1;
 
 	// Use this for initialization
 	public override void UnityStart () {
