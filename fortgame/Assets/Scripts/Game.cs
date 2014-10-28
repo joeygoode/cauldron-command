@@ -81,7 +81,6 @@ public class Game : MonoBehaviour {
             new Vector3(x, 0, 0), 
             new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
-        r.box.x = x;
         resources.Add(r);
     }
 

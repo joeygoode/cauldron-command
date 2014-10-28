@@ -15,6 +15,7 @@ public class Resource : MonoBehaviour {
     private SpriteRenderer sprender;
 	// Use this for initialization
 	void Start () {
+        box.x = GetComponentInParent<Transform>().position.x;
         box.width = width;
         sprender = this.GetComponentInParent<SpriteRenderer>();
         sprender.sprite = tombstone;
