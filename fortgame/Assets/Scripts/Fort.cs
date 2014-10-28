@@ -18,10 +18,13 @@ public class Fort : MonoBehaviour {
     public float floorHeight = 50;
     public float baseHeight = 100;
     public float floorXOffset = 30;
+    public float floorWidth = 262;
     public float doorXPos = 192;
     public float doorWidth = 37;
     [HideInInspector]
     public OneDBox doorBox = new OneDBox(0, 0, 0);
+    [HideInInspector]
+    public OneDBox floorBox = new OneDBox(0, 0, 0);
 
     //public List<Cauldron> cauldrons = new List<Cauldron>();
     
@@ -36,14 +39,14 @@ public class Fort : MonoBehaviour {
         hitpoints = maxHitpoints;
         if (direction == 1)
         {
-            Debug.Log("hi");
             doorBox = new OneDBox(box.x + width - doorXPos - doorWidth, doorWidth, 0);
         }
         else
         {
-            Debug.Log("bye");
             doorBox = new OneDBox(box.x + doorXPos, doorWidth, 0);
         }
+
+        floorBox = new OneDBox(box.x + box.width/2 + floorXOffset * direction - floorWidth/2, floorWidth, 0);
 	}
 	
 	// Update is called once per frame

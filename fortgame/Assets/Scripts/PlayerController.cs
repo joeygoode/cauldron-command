@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour {
             float walkDir = Input.GetAxis(walkAxis);
             //physics
             OneDBox next = new OneDBox(box.x, box.width, walkDir * walkSpeed);
-            if ( game.IsValidMove(team,next) )
+            if (game.IsValidMove(team,next) && (floorPos == 0 || next.overlapAmount(team.fort.floorBox) == next.width))
             {
                 box.velocity = next.velocity;
             }

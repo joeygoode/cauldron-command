@@ -328,6 +328,7 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
+  floorWidth: 262
   doorXPos: 322
   doorWidth: 37
   hitpoints: 100
@@ -899,6 +900,7 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
+  floorWidth: 262
   doorXPos: 322
   doorWidth: 37
   hitpoints: 100
