@@ -53,6 +53,9 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
+  labPercentage: .300000012
+  CombinationResource: {fileID: 0}
+  team: {fileID: 0}
   hitpoints: 100
 --- !u!212 &21200000
 SpriteRenderer:

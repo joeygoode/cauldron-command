@@ -18,20 +18,50 @@ public class Fort : MonoBehaviour {
     public float floorHeight = 50;
     public float baseHeight = 100;
     public float floorXOffset = 30;
+    public float labPercentage;
+    public GameObject CombinationResource;
 
     //public List<Cauldron> cauldrons = new List<Cauldron>();
     
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
-
+    [HideInInspector]
+    public OneDBox labBox = new OneDBox(0,32,0);
+    [HideInInspector]
+    public Team team;
     [HideInInspector] public int hitpoints = 1;
 
 	// Use this for initialization
 	void Start () {
         box = new OneDBox(transform.position.x - width / 2, width, 0);
+        float spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
+        float leftEdge;
+        if (team.direction < 0)
+        {
+            leftEdge = transform.position.x - spriteWidth / 2 + (1 - labPercentage) * spriteWidth;
+        }
+        else
+        {
+            leftEdge = transform.position.x - spriteWidth / 2;
+        }
+        labBox = new OneDBox(leftEdge, spriteWidth * labPercentage, 0);
         hitpoints = maxHitpoints;
 	}
 	
+    public Resource Combine (Resource first, Resource Second) {
+        float newX;
+        if (team.direction < 0)
+        {
+            newX = labBox.x;
+        }
+        else
+        {
+            newX = box.x;
+        }
+        GameObject g = (GameObject) Instantiate(CombinationResource, new Vector3(newX, 0, 0), new Quaternion(0, 0, 0, 0));
+        return g.GetComponent<Resource>();
+    }
+
 	// Update is called once per frame
 	void Update () {
         Vector3 thisP = this.transform.position;
