@@ -26,9 +26,6 @@ public class Team : MonoBehaviour {
     //altar object
     [HideInInspector] 
     public SacrificialAltar altar;
-    //mob spawning (temporary until cauldrons implemented)
-    public float spawnRate = 0.5f;
-    private float mobTimer = 0;
 
     //this initializes before start
     void Awake()

@@ -19,6 +19,7 @@ public class Fort : MonoBehaviour {
     public float baseHeight = 100;
     public float floorXOffset = 30;
     public float floorWidth = 262;
+    public float cauldronXStart = 80;
     public float doorXPos = 192;
     public float doorWidth = 37;
     [HideInInspector]
@@ -26,7 +27,11 @@ public class Fort : MonoBehaviour {
     [HideInInspector]
     public OneDBox floorBox = new OneDBox(0, 0, 0);
 
-    //public List<Cauldron> cauldrons = new List<Cauldron>();
+    public int cauldronsPerFloor = 2;
+    public float cauldronSpawnRate = 3.0f;
+    private float cauldronTimer = 0;
+    [HideInInspector]
+    public List<List<Cauldron>> cauldrons = new List<List<Cauldron>>();
     
     [HideInInspector]
     public OneDBox box = new OneDBox(0,32, 0);
@@ -54,13 +59,38 @@ public class Fort : MonoBehaviour {
         Vector3 thisP = this.transform.position;
 	    //update floor sprites
         if(floorObjects.Count < floors) {
+            //add a floor
             Vector3 floorPos = new Vector3(thisP.x + floorXOffset * direction, thisP.y + baseHeight + floorHeight * floorObjects.Count, thisP.z);
             GameObject floorObj = (GameObject)Instantiate(floorPrefab, floorPos, this.transform.rotation);
             floorObjects.Add(floorObj);
+            //add cauldrons on the floor
+            cauldrons.Add(new List<Cauldron>());
+            for (int i = 0; i < cauldronsPerFloor; i++)
+            {
+                //calculate cauldron position
+                float cauldronX = 0;
+                float cauldronXSpace = floorWidth - floorXOffset;
+                if(direction == 1) {
+                    cauldronX = floorBox.x + floorXOffset + cauldronXSpace * (((float)i + 1) / ((float) cauldronsPerFloor + 1));
+                } else {
+                    cauldronX = floorBox.x + floorWidth - floorXOffset - cauldronXSpace * (((float)i + 1) / ((float) cauldronsPerFloor + 1));
+                }
+                //create and add object
+                Vector3 cauldronPos = new Vector3(cauldronX, floorPos.y, thisP.z);
+                GameObject cauldronObj = (GameObject)Instantiate(cauldronPrefab, cauldronPos, this.transform.rotation);
+                cauldrons[floors - 1].Add(cauldronObj.GetComponent<Cauldron>());
+            }
+
         }
         if(floorObjects.Count > floors) {
+            //destroy floor sprites
             Destroy(floorObjects[floorObjects.Count - 1]);
             floorObjects.RemoveAt(floorObjects.Count - 1);
+            //destroy cauldrons
+            foreach (Cauldron c in cauldrons[floorObjects.Count]) {
+                c.Destroy();
+            }
+            cauldrons.RemoveAt(floorObjects.Count);
         }
         //update roof sprite
         roof.transform.position = new Vector3(thisP.x + floorXOffset * direction, thisP.y + floorHeight * (floorObjects.Count + 1), thisP.z);
