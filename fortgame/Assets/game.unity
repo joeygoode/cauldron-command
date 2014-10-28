@@ -113,7 +113,6 @@ MonoBehaviour:
   fort: {fileID: 0}
   player: {fileID: 0}
   altar: {fileID: 0}
-  spawnRate: 2
 --- !u!4 &123421536
 Transform:
   m_ObjectHideFlags: 0
@@ -318,7 +317,7 @@ MonoBehaviour:
   maxHitpoints: 500
   width: 550
   direction: 1
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
+  cauldronPrefab: {fileID: 100000, guid: 52097919e8610cc4ea7d5ebeb0ac29e6, type: 2}
   floorPrefab: {fileID: 100000, guid: 1880c8cba582a8745bdb36090b8080bd, type: 2}
   floors: 0
   maxFloors: 5
@@ -329,8 +328,11 @@ MonoBehaviour:
   baseHeight: 138
   floorXOffset: 30
   floorWidth: 262
+  cauldronXStart: 80
   doorXPos: 322
   doorWidth: 37
+  cauldronsPerFloor: 2
+  cauldronSpawnRate: 3
   hitpoints: 100
 --- !u!212 &325397110
 SpriteRenderer:
@@ -890,7 +892,7 @@ MonoBehaviour:
   maxHitpoints: 500
   width: 550
   direction: -1
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
+  cauldronPrefab: {fileID: 100000, guid: 52097919e8610cc4ea7d5ebeb0ac29e6, type: 2}
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
   maxFloors: 5
@@ -901,8 +903,11 @@ MonoBehaviour:
   baseHeight: 138
   floorXOffset: 30
   floorWidth: 262
+  cauldronXStart: 80
   doorXPos: 322
   doorWidth: 37
+  cauldronsPerFloor: 2
+  cauldronSpawnRate: 3
   hitpoints: 100
 --- !u!212 &1315495738
 SpriteRenderer:
@@ -1337,7 +1342,6 @@ MonoBehaviour:
   fort: {fileID: 0}
   player: {fileID: 0}
   altar: {fileID: 0}
-  spawnRate: 2
 --- !u!4 &1702375666
 Transform:
   m_ObjectHideFlags: 0
