@@ -17,7 +17,7 @@ public class Poltergeist : Unit {
         //figure out move direction
         Vector3 current = GetComponent<Transform>().position;
         Vector3 target = team.fort.roof.GetComponent<Transform>().position;
-        target.y += roofTargetOffset;
+        target = new Vector3(target.x, target.y + roofTargetOffset, target.z);
         Vector3 moveVector = target - current;
         //die if we reached the target
         if (moveVector.magnitude < moveSpeed)
