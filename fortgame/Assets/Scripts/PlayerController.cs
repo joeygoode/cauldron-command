@@ -65,6 +65,11 @@ public class PlayerController : MonoBehaviour {
                 animator.SetBool("isEnteringStairs", false);
                 animator.SetBool("isExitingStairs", true);
                 transform.position = new Vector3(transform.position.x, team.fort.getFloorHeight(floorPos), transform.position.z);
+                if(heldResource != null){
+                    heldResource.GetComponent<SpriteRenderer>().enabled = true;
+                    heldResource.level = floorPos;
+                    heldResource.setY(transform.position.y);
+                }
             }
             if (isEnteringStairs)
             {
@@ -72,6 +77,10 @@ public class PlayerController : MonoBehaviour {
                 isInStairwell = true;
                 isEnteringStairs = false;
                 sprender.enabled = false;
+                if (heldResource != null)
+                {
+                    heldResource.GetComponent<SpriteRenderer>().enabled = false;
+                }
             }
         }
 
