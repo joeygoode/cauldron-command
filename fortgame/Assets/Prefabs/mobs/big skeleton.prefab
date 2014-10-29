@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -311.799652, y: 269.337402, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,20 +57,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: {fileID: 0}
-  hitPoints: 10
-  width: 50
+  hitPoints: 25
+  width: 25
   height: 70
   squishiness: .300000012
-  walkSpeed: 150
-  walkSpeedRandomness: .100000001
+  walkSpeed: 120
+  walkSpeedRandomness: .300000012
   xScaleRandomness: 0
   faction: 0
-  attackPower: 2
+  attackPower: 4
   attackSpeed: .300000012
-  fortDamage: 10
+  fortDamage: 20
   targetMob: {fileID: 0}
   y: 0
   squish: 0
+  xScale: 3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
