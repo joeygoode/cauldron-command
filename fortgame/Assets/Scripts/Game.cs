@@ -81,7 +81,6 @@ public class Game : MonoBehaviour {
             new Vector3(x, 0, 0), 
             new Quaternion(0, 0, 0, 0));
         Resource r = g.GetComponent<Resource>();
-        r.box.x = x;
         resources.Add(r);
     }
 
@@ -156,12 +155,50 @@ public class Game : MonoBehaviour {
                 }
             }
 
+            //collide resources with labs
+            List<Resource> newResources = new List<Resource>();
+            List<Team> teams = new List<Team>();
+            teams.Add(left);
+            teams.Add(right);
+            foreach (Team t in teams)
+            {
+                Resource first = null;
+                Resource second = null;
+                foreach (Resource r in resources)
+                {
+                    if (r.box.overlap(t.fort.labBox))
+                    {
+                        if ( first == null )
+                        {
+                            first = r;
+                        }
+                        else if ( second == null )
+                        {
+                            second = r;
+                        }
+                        else
+                        {
+                            // Unreachable in normal game play, but ignore the resource
+                        }
+                    }
+                }
+                if (first != null && second != null && !t.player.box.overlap(t.fort.labBox))
+                {
+                    newResources.Add(t.fort.Combine(first,second));
+                    deadResources.Add(first);
+                    deadResources.Add(second);
+                }
+            }
+
             foreach (Resource r in deadResources)
             {
                 resources.Remove(r);
                 Destroy(r.gameObject);
             }
-
+            foreach (Resource r in newResources)
+            {
+                resources.Add(r);
+            }
             //spawn resources
             if (resources.Count > maxFreeResources) {
             } else if (resourceSpawnCountdown < 0) {

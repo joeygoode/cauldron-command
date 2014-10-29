@@ -11,8 +11,8 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: fort
-  m_TagString: BlueFort
+  m_Name: Big Bone Resource
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,8 +24,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -70, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -545.459229, y: 216.046616, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -37,26 +37,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d2a8b7011ec12346b1d0094f5d5c34f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7efe17db1bff59f4ea432dc92a6af4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 500
-  width: 32
-  direction: 1
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
-  floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
-  floors: 0
-  maxFloors: 5
-  floorProgress: 5
-  floorProgressRequired: 10
-  roof: {fileID: 0}
-  floorHeight: 129
-  baseHeight: 138
-  floorXOffset: 30
-  labPercentage: .300000012
-  CombinationResource: {fileID: 100000, guid: 4da8c3a512902614c94bc2a7ad990ec2, type: 2}
-  team: {fileID: 0}
-  hitpoints: 100
+  carriedResourceHeight: 30
+  tombstone: {fileID: 21300000, guid: 5461493e5a89aa8418d457e76f10219c, type: 3}
+  resource: {fileID: 21300000, guid: 0d53168ef3d14cf449cc0b6e1c171f53, type: 3}
+  width: 48
+  mobPrefab: {fileID: 100000, guid: 86aea7d31c8eb6947a63017f4c4fc869, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -75,9 +63,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3167093033
+  m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc9631582733f5d468f6b9ce00384e27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d53168ef3d14cf449cc0b6e1c171f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
