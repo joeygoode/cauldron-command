@@ -1,15 +1,11 @@
 fileFormatVersion: 2
-guid: c9dcb5c88800b9f4aa7cf11dc7a29039
+guid: 5660af5eb2989d54691fdb00a9ac51bd
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rat_0
-    21300002: Rat_1
-    21300004: Rat_2
-    21300006: Rat_3
-    21300008: Rat_4
-    21300010: Rat_5
-    21300012: Rat_6
-    21300014: Rat_7
+    21300000: Cursed_Skeleton_G_0
+    21300002: Cursed_Skeleton_G_1
+    21300004: Cursed_Skeleton_G_2
+    21300006: Cursed_Skeleton_G_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,7 +38,7 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
+  alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
@@ -51,83 +47,43 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Rat_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 48
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_4
+    - name: Cursed_Skeleton_G_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 28
+        height: 36
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_5
+    - name: Cursed_Skeleton_G_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 28
         y: 0
-        width: 48
-        height: 48
+        width: 28
+        height: 36
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_6
+    - name: Cursed_Skeleton_G_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 56
         y: 0
-        width: 48
-        height: 48
+        width: 28
+        height: 36
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_7
+    - name: Cursed_Skeleton_G_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 84
         y: 0
-        width: 48
-        height: 48
+        width: 28
+        height: 36
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

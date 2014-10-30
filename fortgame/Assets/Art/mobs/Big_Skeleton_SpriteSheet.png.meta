@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: c9dcb5c88800b9f4aa7cf11dc7a29039
+guid: e6403cad029b64446bf5bc4b9380583f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rat_0
-    21300002: Rat_1
-    21300004: Rat_2
-    21300006: Rat_3
-    21300008: Rat_4
-    21300010: Rat_5
-    21300012: Rat_6
-    21300014: Rat_7
+    21300000: Big_Skeleton_SpriteSheet_0
+    21300002: Big_Skeleton_SpriteSheet_1
+    21300004: Big_Skeleton_SpriteSheet_2
+    21300006: Big_Skeleton_SpriteSheet_3
+    21300008: Big_Skeleton_SpriteSheet_4
+    21300010: Big_Skeleton_SpriteSheet_5
+    21300012: Big_Skeleton_SpriteSheet_6
+    21300014: Big_Skeleton_SpriteSheet_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,7 +42,7 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
+  alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
@@ -51,7 +51,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Rat_0
+    - name: Big_Skeleton_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -61,7 +61,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_1
+    - name: Big_Skeleton_SpriteSheet_1
       rect:
         serializedVersion: 2
         x: 48
@@ -71,7 +71,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_2
+    - name: Big_Skeleton_SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 96
@@ -81,7 +81,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_3
+    - name: Big_Skeleton_SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 144
@@ -91,7 +91,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_4
+    - name: Big_Skeleton_SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -101,7 +101,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_5
+    - name: Big_Skeleton_SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 48
@@ -111,7 +111,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_6
+    - name: Big_Skeleton_SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 96
@@ -121,7 +121,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Rat_7
+    - name: Big_Skeleton_SpriteSheet_7
       rect:
         serializedVersion: 2
         x: 144

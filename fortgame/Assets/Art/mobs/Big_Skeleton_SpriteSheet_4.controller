@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Rat_animator
+  m_Name: Big_Skeleton_SpriteSheet_4
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: isAttacking
@@ -33,8 +33,8 @@ Transition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110223545}
+  m_SrcState: {fileID: 110230273}
+  m_DstState: {fileID: 110200000}
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
@@ -46,15 +46,15 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110113334
+--- !u!1101 &110122617
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110223545}
-  m_DstState: {fileID: 110200000}
+  m_SrcState: {fileID: 110200000}
+  m_DstState: {fileID: 110230273}
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
@@ -71,28 +71,28 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: rat_walk
-  m_Speed: .600000024
+  m_Name: bigskele_attack
+  m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 45821fcdfbe90164f938ae09ae6dd77d, type: 2}
+  - {fileID: 7400000, guid: b422d7c7f5545e4468ee8b1b33447976, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 50, y: 50, z: 0}
+  m_Position: {x: 48, y: 132, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110223545
+--- !u!1102 &110230273
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: rat_attack
+  m_Name: bigskele_walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 0407709a5e40f6f478fe833c5c29b277, type: 2}
+  - {fileID: 7400000, guid: 40e3bd13d64097b4f911c0f66ec72d47, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 48, y: 120, z: 0}
+  m_Position: {x: 48, y: 60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -103,21 +103,21 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110200000}
+  m_DefaultState: {fileID: 110230273}
   m_States:
   - {fileID: 110200000}
-  - {fileID: 110223545}
+  - {fileID: 110230273}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110223545}
+      first: {fileID: 110230273}
       second:
-      - {fileID: 110113334}
+      - {fileID: 110100000}
     data:
       first: {fileID: 110200000}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110122617}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
