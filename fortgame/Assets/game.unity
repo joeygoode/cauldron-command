@@ -334,6 +334,7 @@ MonoBehaviour:
   cauldronsPerFloor: 2
   cauldronSpawnRate: 3
   hitpoints: 100
+  team: {fileID: 123421535}
 --- !u!212 &325397110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -909,6 +910,7 @@ MonoBehaviour:
   cauldronsPerFloor: 2
   cauldronSpawnRate: 3
   hitpoints: 100
+  team: {fileID: 1702375665}
 --- !u!212 &1315495738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1114,6 +1116,10 @@ Prefab:
       propertyPath: direction
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 1702375665}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
   m_RootGameObject: {fileID: 1315495736}
@@ -1298,6 +1304,10 @@ Prefab:
       propertyPath: floorPrefab
       value: 
       objectReference: {fileID: 100000, guid: 1880c8cba582a8745bdb36090b8080bd, type: 2}
+    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 123421535}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
   m_RootGameObject: {fileID: 325397108}

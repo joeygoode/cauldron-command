@@ -4,10 +4,10 @@ using System.Collections.Generic;
 public class Cauldron : MonoBehaviour {
 
     public float width = 20;
-    int floor = 1;
-    Resource mob;
+    public int floor = 1;
+    public Resource resource;
     [HideInInspector]
-    OneDBox box;
+    public OneDBox box;
 
 	// Use this for initialization
 	void Start () {
