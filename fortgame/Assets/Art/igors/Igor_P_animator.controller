@@ -32,6 +32,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: isEnteringStairs
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isExitingStairs
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -77,7 +89,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: 
+    m_ConditionEvent: isEnteringStairs
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -293,30 +305,30 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110246325}
-      second: []
-    data:
-      first: {fileID: 110282810}
+      first: {fileID: 110200000}
       second:
-      - {fileID: 110119955}
+      - {fileID: 110173725}
     data:
-      first: {fileID: 110240715}
+      first: {fileID: 110220461}
       second:
-      - {fileID: 110100000}
-      - {fileID: 110172269}
+      - {fileID: 110179655}
     data:
       first: {fileID: 110237762}
       second:
       - {fileID: 110145127}
       - {fileID: 110197796}
     data:
-      first: {fileID: 110220461}
+      first: {fileID: 110240715}
       second:
-      - {fileID: 110179655}
+      - {fileID: 110100000}
+      - {fileID: 110172269}
     data:
-      first: {fileID: 110200000}
+      first: {fileID: 110282810}
       second:
-      - {fileID: 110173725}
+      - {fileID: 110119955}
+    data:
+      first: {fileID: 110246325}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

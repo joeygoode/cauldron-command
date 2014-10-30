@@ -60,9 +60,12 @@ MonoBehaviour:
   width: 27
   liftHeight: 43
   walkAxis: P2Horizontal
+  stairsAxis: P2Vertical
   digButton: P2Dig
   pickUpDuration: .400000006
   putDownDuration: .300000012
+  stairsAnimateDuration: .200000003
+  stairsInsideDuration: .400000006
   game: {fileID: 0}
   team: {fileID: 0}
 --- !u!212 &21200000

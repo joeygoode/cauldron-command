@@ -113,7 +113,6 @@ MonoBehaviour:
   fort: {fileID: 0}
   player: {fileID: 0}
   altar: {fileID: 0}
-  spawnRate: 2
 --- !u!4 &123421536
 Transform:
   m_ObjectHideFlags: 0
@@ -160,11 +159,15 @@ MonoBehaviour:
   width: 27
   liftHeight: 43
   walkAxis: P1Horizontal
+  stairsAxis: P1Vertical
   digButton: P1Dig
   pickUpDuration: .400000006
   putDownDuration: .300000012
+  stairsAnimateDuration: .200000003
+  stairsInsideDuration: .400000006
   game: {fileID: 0}
   team: {fileID: 0}
+  floorPos: 0
 --- !u!95 &147612550
 Animator:
   serializedVersion: 3
@@ -312,9 +315,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitpoints: 500
-  width: 372
+  width: 550
   direction: 1
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
+  cauldronPrefab: {fileID: 100000, guid: 52097919e8610cc4ea7d5ebeb0ac29e6, type: 2}
   floorPrefab: {fileID: 100000, guid: 1880c8cba582a8745bdb36090b8080bd, type: 2}
   floors: 0
   maxFloors: 5
@@ -324,10 +327,14 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
-  labPercentage: .300000012
-  CombinationResource: {fileID: 100000, guid: 4da8c3a512902614c94bc2a7ad990ec2, type: 2}
-  team: {fileID: 0}
+  floorWidth: 262
+  cauldronXStart: 80
+  doorXPos: 322
+  doorWidth: 37
+  cauldronsPerFloor: 2
+  cauldronSpawnRate: 3
   hitpoints: 100
+  team: {fileID: 123421535}
 --- !u!212 &325397110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -884,9 +891,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitpoints: 500
-  width: 372
-  direction: 1
-  cauldronPrefab: {fileID: 100000, guid: d3c55105db04ccb4aa3455d6979e783f, type: 2}
+  width: 550
+  direction: -1
+  cauldronPrefab: {fileID: 100000, guid: 52097919e8610cc4ea7d5ebeb0ac29e6, type: 2}
   floorPrefab: {fileID: 100000, guid: 767e1eb6684ebbe4ba87a629a5ffe11e, type: 2}
   floors: 0
   maxFloors: 5
@@ -896,10 +903,14 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
-  labPercentage: .300000012
-  CombinationResource: {fileID: 100000, guid: 4da8c3a512902614c94bc2a7ad990ec2, type: 2}
-  team: {fileID: 0}
+  floorWidth: 262
+  cauldronXStart: 80
+  doorXPos: 322
+  doorWidth: 37
+  cauldronsPerFloor: 2
+  cauldronSpawnRate: 3
   hitpoints: 100
+  team: {fileID: 1702375665}
 --- !u!212 &1315495738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -969,11 +980,15 @@ MonoBehaviour:
   width: 27
   liftHeight: 43
   walkAxis: P2Horizontal
+  stairsAxis: P2Vertical
   digButton: P2Dig
   pickUpDuration: .400000006
   putDownDuration: .300000012
+  stairsAnimateDuration: .200000003
+  stairsInsideDuration: .400000006
   game: {fileID: 0}
   team: {fileID: 0}
+  floorPos: 0
 --- !u!95 &1376002636
 Animator:
   serializedVersion: 3
@@ -1094,13 +1109,17 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
-      propertyPath: width
-      value: 372
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
       propertyPath: roof
       value: 
       objectReference: {fileID: 678922672}
+    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
+      propertyPath: direction
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 1702375665}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
   m_RootGameObject: {fileID: 1315495736}
@@ -1278,10 +1297,6 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
-      propertyPath: width
-      value: 372
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
       propertyPath: roof
       value: 
       objectReference: {fileID: 662549671}
@@ -1289,6 +1304,10 @@ Prefab:
       propertyPath: floorPrefab
       value: 
       objectReference: {fileID: 100000, guid: 1880c8cba582a8745bdb36090b8080bd, type: 2}
+    - target: {fileID: 11400000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 123421535}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd14eb48fdbeb0f40b53d6cdcb1e7356, type: 2}
   m_RootGameObject: {fileID: 325397108}
@@ -1333,7 +1352,6 @@ MonoBehaviour:
   fort: {fileID: 0}
   player: {fileID: 0}
   altar: {fileID: 0}
-  spawnRate: 2
 --- !u!4 &1702375666
 Transform:
   m_ObjectHideFlags: 0

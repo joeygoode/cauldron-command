@@ -9,6 +9,10 @@ public class Resource : MonoBehaviour {
     public GameObject mobPrefab;
     private PlayerController playerCarryingMe;
     private float groundY = 0;
+    private float currentY;
+
+    [HideInInspector]
+    public int level = 0;
 
 	[HideInInspector] public OneDBox box = new OneDBox(0,0,0);
 
@@ -20,6 +24,7 @@ public class Resource : MonoBehaviour {
         sprender = this.GetComponentInParent<SpriteRenderer>();
         sprender.sprite = tombstone;
         groundY = transform.position.y;
+        currentY = groundY;
 	}
 	
 	// Update is called once per frame
@@ -27,11 +32,16 @@ public class Resource : MonoBehaviour {
 	    
 	}
 
+    public void setY(float y)
+    {
+        this.currentY = y;
+    }
+
     private float getY()
     {
         if (playerCarryingMe == null)
         {
-            return groundY;
+            return currentY;
         }
         else
         {

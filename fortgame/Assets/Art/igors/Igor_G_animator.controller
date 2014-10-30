@@ -32,6 +32,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: isEnteringStairs
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isExitingStairs
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -293,27 +305,30 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110233498}
+      first: {fileID: 110200000}
       second:
-      - {fileID: 110107783}
-    data:
-      first: {fileID: 110224038}
-      second:
-      - {fileID: 110153316}
-    data:
-      first: {fileID: 110264323}
-      second:
-      - {fileID: 110127299}
-      - {fileID: 110127255}
+      - {fileID: 110100000}
     data:
       first: {fileID: 110266422}
       second:
       - {fileID: 110105290}
       - {fileID: 110162134}
     data:
-      first: {fileID: 110200000}
+      first: {fileID: 110264323}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110127299}
+      - {fileID: 110127255}
+    data:
+      first: {fileID: 110295472}
+      second: []
+    data:
+      first: {fileID: 110224038}
+      second:
+      - {fileID: 110153316}
+    data:
+      first: {fileID: 110233498}
+      second:
+      - {fileID: 110107783}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

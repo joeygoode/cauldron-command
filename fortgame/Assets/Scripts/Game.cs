@@ -139,19 +139,61 @@ public class Game : MonoBehaviour {
                 }
             }
 
-            //collide resources with altars
             List<Resource> deadResources = new List<Resource>();
             foreach (Resource r in resources)
             {
-                if (r.box.overlap(left.altar.box))
+                //collide resource with altars
+                if (r.level == 0)
                 {
-                    left.altar.recieveResource(r);
-                    deadResources.Add(r);
+                    if (r.box.overlap(left.altar.box))
+                    {
+                        left.altar.recieveResource(r);
+                        deadResources.Add(r);
+                    }
+                    else if (r.box.overlap(right.altar.box))
+                    {
+                        right.altar.recieveResource(r);
+                        deadResources.Add(r);
+                    }
                 }
-                if (r.box.overlap(right.altar.box))
+                //collide resource with cauldrons
+                else
                 {
-                    right.altar.recieveResource(r);
-                    deadResources.Add(r);
+                    //try left cauldrons or right cauldrons.
+                    if (r.box.x < 0)
+                    {
+                        //only collide with the cauldrons on one floor.
+                        if (left.fort.cauldrons.Count >= r.level)
+                        {
+                            foreach (Cauldron c in left.fort.cauldrons[r.level - 1])
+                            {
+                                if (r.box.overlap(c.box))
+                                {
+                                    c.recieveResource(r);
+                                    deadResources.Add(r);
+                                    //make sure the resource doesn't get put in multiple cauldrons, even if it overlaps with multiple cauldrons.
+                                    r.box.x = float.MinValue;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //only collide with the cauldrons on one floor.
+                        if (right.fort.cauldrons.Count >= r.level)
+                        {
+                            foreach (Cauldron c in right.fort.cauldrons[r.level - 1])
+                            {
+                                if (r.box.overlap(c.box))
+                                {
+                                    c.recieveResource(r);
+                                    deadResources.Add(r);
+                                    //make sure the resource doesn't get put in multiple cauldrons, even if it overlaps with multiple cauldrons.
+                                    r.box.x = float.MaxValue;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
