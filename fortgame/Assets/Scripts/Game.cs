@@ -170,7 +170,7 @@ public class Game : MonoBehaviour {
                             {
                                 if (r.box.overlap(c.box))
                                 {
-                                    c.resource = r;
+                                    c.recieveResource(r);
                                     deadResources.Add(r);
                                     //make sure the resource doesn't get put in multiple cauldrons, even if it overlaps with multiple cauldrons.
                                     r.box.x = float.MinValue;
@@ -187,7 +187,7 @@ public class Game : MonoBehaviour {
                             {
                                 if (r.box.overlap(c.box))
                                 {
-                                    c.resource = r;
+                                    c.recieveResource(r);
                                     deadResources.Add(r);
                                     //make sure the resource doesn't get put in multiple cauldrons, even if it overlaps with multiple cauldrons.
                                     r.box.x = float.MaxValue;

@@ -128,7 +128,7 @@ public class Fort : MonoBehaviour {
             {
                 foreach (Cauldron c in lc)
                 {
-                    if (c.resource != null)
+                    if (c.hasResource)
                     {
                         team.SpawnMob(c.resource);
                     }

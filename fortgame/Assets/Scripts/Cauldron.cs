@@ -5,7 +5,10 @@ public class Cauldron : MonoBehaviour {
 
     public float width = 20;
     public int floor = 1;
+    [HideInInspector]
     public Resource resource;
+    [HideInInspector]
+    public bool hasResource = false;
     [HideInInspector]
     public OneDBox box;
 
@@ -22,5 +25,11 @@ public class Cauldron : MonoBehaviour {
     public void Destroy()
     {
         Object.Destroy(this.gameObject);
+    }
+
+    public void recieveResource(Resource resource)
+    {
+        this.resource = resource;
+        hasResource = true;
     }
 }
