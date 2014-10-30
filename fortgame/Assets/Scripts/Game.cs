@@ -173,7 +173,9 @@ public class Game : MonoBehaviour {
                                     c.recieveResource(r);
                                     deadResources.Add(r);
                                     //make sure the resource doesn't get put in multiple cauldrons, even if it overlaps with multiple cauldrons.
-                                    r.box.x = float.MinValue;
+                                    r.box.layer = -1;
+                                    Vector3 rPos = new Vector3(c.transform.position.x, c.transform.position.y + 40, c.transform.position.z);
+                                    r.Cauldronize(rPos);
                                 }
                             }
                         }
@@ -190,7 +192,9 @@ public class Game : MonoBehaviour {
                                     c.recieveResource(r);
                                     deadResources.Add(r);
                                     //make sure the resource doesn't get put in multiple cauldrons, even if it overlaps with multiple cauldrons.
-                                    r.box.x = float.MaxValue;
+                                    r.box.layer = -1;
+                                    Vector3 rPos = new Vector3(c.transform.position.x, c.transform.position.y + 40, c.transform.position.z);
+                                    r.Cauldronize(rPos);
                                 }
                             }
                         }
@@ -240,7 +244,10 @@ public class Game : MonoBehaviour {
             {
 
                 resources.Remove(r);
-                Destroy(r.gameObject);
+                if (!r.isInCauldron())
+                {
+                    Destroy(r.gameObject);
+                }
             }
             foreach (Resource r in newResources)
             {

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 public class Fort : MonoBehaviour {
     
-    public int maxHitpoints = 100;    
+    public int maxHitpoints = 150;
+    public int baseHitpoints = 150;
+    public int hitpointsPerFloor = 100;
     public float width = 32;
     public int direction = 1;
     public GameObject cauldronPrefab;
@@ -44,6 +46,7 @@ public class Fort : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        maxHitpoints = baseHitpoints;
         box = new OneDBox(transform.position.x - width / 2, width, 0);
         float spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
 
@@ -88,6 +91,13 @@ public class Fort : MonoBehaviour {
             }
         }
 
+        //update hitpoints
+        maxHitpoints = baseHitpoints + floors * hitpointsPerFloor;
+        if (hitpoints > maxHitpoints)
+        {
+            hitpoints = maxHitpoints;
+        }
+
         //update floor sprites
         if (floorObjects.Count < floors)
         {
@@ -96,6 +106,8 @@ public class Fort : MonoBehaviour {
             Vector3 floorPos = new Vector3(thisP.x + floorXOffset * direction, thisP.y + baseHeight + floorHeight * floorObjects.Count, thisP.z);
             GameObject floorObj = (GameObject)Instantiate(floorPrefab, floorPos, this.transform.rotation);
             floorObjects.Add(floorObj);
+            //add hitpoints
+            hitpoints += hitpointsPerFloor;
             //add cauldrons on the floor
             cauldrons.Add(new List<Cauldron>());
             for (int i = 0; i < cauldronsPerFloor; i++)

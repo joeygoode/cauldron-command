@@ -45,7 +45,7 @@ public class Team : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        score.text = "HP: " + fort.hitpoints;
+        score.text = "HP: " + fort.hitpoints + " / " + fort.maxHitpoints;
     }
 
     // Fixed Update is called 

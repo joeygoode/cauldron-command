@@ -44,6 +44,7 @@ MonoBehaviour:
   hitPoints: 1
   moveSpeed: 3
   floorContribution: 1
+  healthBoost: 3
   roofTargetOffset: -40
 --- !u!212 &21200000
 SpriteRenderer:
@@ -65,7 +66,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 4073571663
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4408eb99335dc64cba4f1568c4d9da4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 339cd2dc49a09f94a84bef1969798f0f, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:

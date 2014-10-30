@@ -43,6 +43,7 @@ MonoBehaviour:
   carriedResourceHeight: 40
   tombstone: {fileID: 21300000, guid: 5461493e5a89aa8418d457e76f10219c, type: 3}
   resource: {fileID: 21300000, guid: 0d53168ef3d14cf449cc0b6e1c171f53, type: 3}
+  floatySprite: {fileID: 21300000, guid: 3b51ce7d614a3cb409a22c993d88a0ad, type: 3}
   width: 24
   mobPrefab: {fileID: 100000, guid: f59144ad0d2c8b34b8fb46c51a18bf06, type: 2}
   level: 0

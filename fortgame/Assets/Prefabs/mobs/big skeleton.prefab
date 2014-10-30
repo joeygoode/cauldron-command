@@ -59,8 +59,8 @@ MonoBehaviour:
   team: {fileID: 0}
   hitPoints: 25
   width: 40
-  height: 70
-  squishiness: .300000012
+  height: 40
+  squishiness: .200000003
   walkSpeed: 120
   walkSpeedRandomness: .300000012
   xScaleRandomness: 0
