@@ -45,7 +45,7 @@ MonoBehaviour:
   resource: {fileID: 21300000, guid: d19bb45bd995cea46b1b93b5ae96a126, type: 3}
   floatySprite: {fileID: 21300000, guid: 00c42a5534b2c344a8df6e24289b27e1, type: 3}
   width: 30
-  mobPrefab: {fileID: 100000, guid: f3f7154c03a560b458cd32eb8faa7ea8, type: 2}
+  mobPrefab: {fileID: 100000, guid: 36a4490134d214c4693f2e957945f237, type: 2}
   level: 0
 --- !u!212 &21200000
 SpriteRenderer:

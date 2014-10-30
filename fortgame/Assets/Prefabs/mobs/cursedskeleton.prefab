@@ -65,9 +65,9 @@ MonoBehaviour:
   walkSpeedRandomness: .5
   xScaleRandomness: 0
   faction: 0
-  attackPower: 10
+  attackPower: 50
   attackSpeed: 10
-  fortDamage: 20
+  fortDamage: 50
   targetMob: {fileID: 0}
   y: 0
   squish: 0

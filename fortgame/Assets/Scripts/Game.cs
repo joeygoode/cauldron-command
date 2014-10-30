@@ -13,6 +13,7 @@ public class Game : MonoBehaviour {
     public GameObject background;
     public List<GameObject> resourceTypes;
     public List<GameObject> combinationRecipes;
+    public GameObject loseScreen;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -22,6 +23,7 @@ public class Game : MonoBehaviour {
         ResetResourceCountdown();
         left.player.game = this;
         right.player.game = this;
+        loseScreen.GetComponent<SpriteRenderer>().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -30,10 +32,12 @@ public class Game : MonoBehaviour {
         if (startButton > 0.0)
         {
             Time.timeScale = 0;
+            loseScreen.GetComponent<SpriteRenderer>().enabled = true;
             gameRunning = false;
         } 
         else if (left.fort.IsDead() || right.fort.IsDead()) {
             Time.timeScale = 0;
+            loseScreen.GetComponent<SpriteRenderer>().enabled = true;
             gameRunning = false;
         }
         else
@@ -126,8 +130,32 @@ public class Game : MonoBehaviour {
                     Mob m2 = (Mob) u2;
                     if (m1.box.overlap(m2.box))
                     {
-                        m1.targetMob = m2;
-                        m2.targetMob = m1;
+                        //target lowest hp mob in range
+                        if (m1.targetMob == null || !m1.targetMob.enabled)
+                        {
+                            m1.targetMob = m2;
+                        }
+                        else
+                        {
+                            if (m1.targetMob.hitPoints > m2.hitPoints)
+                            {
+                                m1.targetMob = m2;
+                            }
+                        }
+                        if (m2.targetMob == null || !m2.targetMob.enabled)
+                        {
+                            m2.targetMob = m1;
+                        }
+                        else
+                        {
+                            if (m2.targetMob.hitPoints > m1.hitPoints)
+                            {
+                                m2.targetMob = m1;
+                            }
+                        }
+
+                        /*m1.targetMob = m2;
+                        m2.targetMob = m1;*/
                         if (m1.box.velocity == 0)
                         {
                             m2.box.x = m1.box.x + m1.box.width;
