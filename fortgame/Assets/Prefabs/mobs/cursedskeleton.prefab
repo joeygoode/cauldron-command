@@ -9,10 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
+  - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Big Bone Resource
-  m_TagString: Untagged
+  m_Name: cursedskeleton
+  m_TagString: BlueMob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,11 +25,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -208.25943, y: 572.850098, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 647660c46b2af574387cda7c7c5ecc23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37,16 +53,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7efe17db1bff59f4ea432dc92a6af4fa, type: 3}
+  m_Script: {fileID: 11500000, guid: bbebe94770003bc4abcc50bc974033e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carriedResourceHeight: 30
-  tombstone: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
-  resource: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
-  floatySprite: {fileID: 21300000, guid: f1006813cbcfe4a42994be68e2b4111d, type: 3}
-  width: 30
-  mobPrefab: {fileID: 100000, guid: 86aea7d31c8eb6947a63017f4c4fc869, type: 2}
-  level: 0
+  team: {fileID: 0}
+  hitPoints: 1
+  width: 25
+  height: 35
+  squishiness: .5
+  walkSpeed: 300
+  walkSpeedRandomness: .5
+  xScaleRandomness: 0
+  faction: 0
+  attackPower: 10
+  attackSpeed: 10
+  fortDamage: 20
+  targetMob: {fileID: 0}
+  y: 0
+  squish: 0
+  xScale: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -65,10 +90,10 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 2211981087
+  m_SortingLayerID: 4073571663
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300002, guid: 5660af5eb2989d54691fdb00a9ac51bd, type: 3}
+  m_Color: {r: .779411793, g: .0745025724, b: .0745025724, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -260,6 +260,9 @@ MonoBehaviour:
   combinationRecipes:
   - {fileID: 100000, guid: 36c887b3831044c4bb901f36ab3036f6, type: 2}
   - {fileID: 100000, guid: 22abaebd577d3cb4699f82e477388da4, type: 2}
+  - {fileID: 100000, guid: 59f7f00bf049457428f23cca09c71c92, type: 2}
+  - {fileID: 100000, guid: a9d1d7fd07dc38a4488c6b9cf3228794, type: 2}
+  - {fileID: 100000, guid: e14c8dbb19a25034887bcc1971946c8f, type: 2}
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0

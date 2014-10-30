@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Big Bone Resource
+  m_Name: Werewolf Resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -141.20253, y: 374.97406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carriedResourceHeight: 30
-  tombstone: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
-  resource: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
-  floatySprite: {fileID: 21300000, guid: f1006813cbcfe4a42994be68e2b4111d, type: 3}
+  tombstone: {fileID: 21300000, guid: d19bb45bd995cea46b1b93b5ae96a126, type: 3}
+  resource: {fileID: 21300000, guid: d19bb45bd995cea46b1b93b5ae96a126, type: 3}
+  floatySprite: {fileID: 21300000, guid: 00c42a5534b2c344a8df6e24289b27e1, type: 3}
   width: 30
-  mobPrefab: {fileID: 100000, guid: 86aea7d31c8eb6947a63017f4c4fc869, type: 2}
+  mobPrefab: {fileID: 100000, guid: f3f7154c03a560b458cd32eb8faa7ea8, type: 2}
   level: 0
 --- !u!212 &21200000
 SpriteRenderer:
@@ -67,7 +67,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2211981087
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d19bb45bd995cea46b1b93b5ae96a126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
