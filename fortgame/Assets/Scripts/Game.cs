@@ -12,6 +12,7 @@ public class Game : MonoBehaviour {
     public float resourceFortSpacing = 20;
     public GameObject background;
     public List<GameObject> resourceTypes;
+    public GameObject combinationResource;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -204,29 +205,46 @@ public class Game : MonoBehaviour {
             teams.Add(right);
             foreach (Team t in teams)
             {
+                int resCount = 0;
                 Resource first = null;
                 Resource second = null;
                 foreach (Resource r in resources)
                 {
                     if (r.box.overlap(t.fort.labBox))
                     {
-                        if ( first == null )
+                        if (resCount == 0)
                         {
+                            Debug.Log("one");
                             first = r;
+                            resCount++;
                         }
-                        else if ( second == null )
+                        else if (resCount == 1)
                         {
+                            Debug.Log("two");
                             second = r;
-                        }
-                        else
-                        {
-                            // Unreachable in normal game play, but ignore the resource
+                            resCount++;
                         }
                     }
                 }
-                if (first != null && second != null && !t.player.box.overlap(t.fort.labBox))
+                if (resCount == 2 && !t.player.box.overlap(t.fort.labBox))
                 {
-                    newResources.Add(t.fort.Combine(first,second));
+                    Debug.Log("combine!");
+                    GameObject g = null;
+                    if (t.direction < 0)
+                    {
+                        g = (GameObject)Instantiate(
+                            combinationResource, 
+                            new Vector3(t.fort.box.x + t.fort.box.width, transform.position.y, transform.position.z), 
+                            new Quaternion(0, 0, 0, 0));
+                    }
+                    else
+                    {
+                        g = (GameObject)Instantiate(
+                            combinationResource,
+                            new Vector3(t.fort.box.x, transform.position.y, transform.position.z),
+                            new Quaternion(0, 0, 0, 0));
+                    }
+                    newResources.Add(g.GetComponent<Resource>());
                     deadResources.Add(first);
                     deadResources.Add(second);
                 }
@@ -234,6 +252,7 @@ public class Game : MonoBehaviour {
 
             foreach (Resource r in deadResources)
             {
+
                 resources.Remove(r);
                 Destroy(r.gameObject);
             }

@@ -17,8 +17,7 @@ public class Fort : MonoBehaviour {
     public float floorHeight = 50;
     public float baseHeight = 100;
     public float floorXOffset = 30;
-	public float labPercentage;
-    public GameObject CombinationResource;
+	public float labWidth = 180;
     public float floorWidth = 262;
     public float cauldronXStart = 80;
     public float doorXPos = 192;
@@ -35,10 +34,10 @@ public class Fort : MonoBehaviour {
     public List<List<Cauldron>> cauldrons = new List<List<Cauldron>>();
     
     [HideInInspector]
-    public OneDBox box = new OneDBox(0,32, 0);
+    public OneDBox box = new OneDBox(0,0, 0);
 
 	[HideInInspector]
-    public OneDBox labBox = new OneDBox(0,32,0);
+    public OneDBox labBox = new OneDBox(0,0,0);
     [HideInInspector] public int hitpoints = 1;
 
     public Team team;
@@ -46,17 +45,16 @@ public class Fort : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         box = new OneDBox(transform.position.x - width / 2, width, 0);
-float spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
-        float leftEdge;
-        if (team.direction < 0)
+        float spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
+
+        if (direction == 1)
         {
-            leftEdge = transform.position.x - spriteWidth / 2 + (1 - labPercentage) * spriteWidth;
+            labBox = new OneDBox(box.x, labWidth, 0);
         }
         else
         {
-            leftEdge = transform.position.x - spriteWidth / 2;
+            labBox = new OneDBox(box.x + box.width - labWidth, labWidth, 0);
         }
-        labBox = new OneDBox(leftEdge, spriteWidth * labPercentage, 0);
         hitpoints = maxHitpoints;
         if (direction == 1)
         {
@@ -66,19 +64,6 @@ float spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
         {
             doorBox = new OneDBox(box.x + doorXPos, doorWidth, 0);
         }
-	public Resource Combine (Resource first, Resource Second) {
-        float newX;
-        if (team.direction < 0)
-        {
-            newX = labBox.x;
-        }
-        else
-        {
-            newX = box.x;
-        }
-        GameObject g = (GameObject) Instantiate(CombinationResource, new Vector3(newX, 0, 0), new Quaternion(0, 0, 0, 0));
-        return g.GetComponent<Resource>();
-    }
 
         floorBox = new OneDBox(box.x + box.width/2 + floorXOffset * direction - floorWidth/2, floorWidth, 0);
 	}

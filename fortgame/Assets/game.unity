@@ -257,6 +257,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: c81e6a9a6cbfa7646a306f2f9ce2ab4e, type: 2}
   - {fileID: 100000, guid: ab556844dc9bf5f4086c3011e8d97540, type: 2}
   - {fileID: 100000, guid: e0bc912cba35b2e4ea703a441c9b9155, type: 2}
+  combinationResource: {fileID: 100000, guid: 4da8c3a512902614c94bc2a7ad990ec2, type: 2}
 --- !u!4 &245772045
 Transform:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
+  labWidth: 180
   floorWidth: 262
   cauldronXStart: 80
   doorXPos: 322
@@ -903,6 +905,7 @@ MonoBehaviour:
   floorHeight: 129
   baseHeight: 138
   floorXOffset: 30
+  labWidth: 180
   floorWidth: 262
   cauldronXStart: 80
   doorXPos: 322
