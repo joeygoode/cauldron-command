@@ -71,7 +71,7 @@ MonoBehaviour:
   targetMob: {fileID: 0}
   y: 0
   squish: 0
-  xScale: 1
+  xScale: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

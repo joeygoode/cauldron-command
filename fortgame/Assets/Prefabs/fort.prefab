@@ -41,6 +41,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitpoints: 500
+  baseHitpoints: 150
+  hitpointsPerFloor: 100
   width: 550
   direction: 1
   cauldronPrefab: {fileID: 100000, guid: 52097919e8610cc4ea7d5ebeb0ac29e6, type: 2}
@@ -54,13 +56,12 @@ MonoBehaviour:
   baseHeight: 138
   floorXOffset: 30
   labWidth: 180
-  CombinationResource: {fileID: 100000, guid: 4da8c3a512902614c94bc2a7ad990ec2, type: 2}
   floorWidth: 262
   cauldronXStart: 80
   doorXPos: 322
   doorWidth: 37
   cauldronsPerFloor: 2
-  cauldronSpawnRate: 3
+  cauldronSpawnRate: 6
   hitpoints: 100
   team: {fileID: 0}
 --- !u!212 &21200000

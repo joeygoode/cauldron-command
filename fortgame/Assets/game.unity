@@ -351,7 +351,7 @@ MonoBehaviour:
   doorXPos: 322
   doorWidth: 37
   cauldronsPerFloor: 2
-  cauldronSpawnRate: 3
+  cauldronSpawnRate: 6
   hitpoints: 100
   team: {fileID: 123421535}
 --- !u!212 &325397110
@@ -988,7 +988,7 @@ MonoBehaviour:
   doorXPos: 322
   doorWidth: 37
   cauldronsPerFloor: 2
-  cauldronSpawnRate: 3
+  cauldronSpawnRate: 6
   hitpoints: 100
   team: {fileID: 1702375665}
 --- !u!212 &1315495738

@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: {fileID: 0}
-  hitPoints: 60
+  hitPoints: 50
   width: 25
   height: 35
   squishiness: .800000012
@@ -67,11 +67,11 @@ MonoBehaviour:
   faction: 0
   attackPower: 1
   attackSpeed: 1
-  fortDamage: 20
+  fortDamage: 10
   targetMob: {fileID: 0}
   y: 0
   squish: 0
-  xScale: 1
+  xScale: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

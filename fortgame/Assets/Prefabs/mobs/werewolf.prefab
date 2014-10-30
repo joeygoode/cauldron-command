@@ -65,13 +65,13 @@ MonoBehaviour:
   walkSpeedRandomness: .400000006
   xScaleRandomness: 0
   faction: 0
-  attackPower: 1
+  attackPower: 2
   attackSpeed: .100000001
   fortDamage: 5
   targetMob: {fileID: 0}
   y: 0
   squish: 0
-  xScale: 1
+  xScale: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

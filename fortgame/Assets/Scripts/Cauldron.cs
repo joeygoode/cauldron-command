@@ -29,6 +29,10 @@ public class Cauldron : MonoBehaviour {
 
     public void recieveResource(Resource resource)
     {
+        if (this.resource != null)
+        {
+            Object.Destroy(this.resource.gameObject);
+        }
         this.resource = resource;
         hasResource = true;
     }

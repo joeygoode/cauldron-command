@@ -42,9 +42,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 0}
   hitPoints: 1
-  moveSpeed: 10
+  moveSpeed: 5
   floorContribution: 0
-  healthBoost: 15
+  healthBoost: 20
   roofTargetOffset: -40
 --- !u!212 &21200000
 SpriteRenderer:

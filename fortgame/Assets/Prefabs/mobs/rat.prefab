@@ -56,21 +56,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbebe94770003bc4abcc50bc974033e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: {fileID: 0}
+  hitPoints: 20
   width: 48
   height: 15
   squishiness: .300000012
   walkSpeed: 100
   walkSpeedRandomness: .200000003
   xScaleRandomness: 1
-  team: {fileID: 0}
   faction: 0
-  hitPoints: 20
   attackPower: 1
   attackSpeed: .600000024
   fortDamage: 8
   targetMob: {fileID: 0}
   y: 0
   squish: 0
+  xScale: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

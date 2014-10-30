@@ -28,14 +28,7 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float startButton = Input.GetAxisRaw("Start-Pause"); //has to be raw to work while paused
-        if (startButton > 0.0)
-        {
-            Time.timeScale = 0;
-            loseScreen.GetComponent<SpriteRenderer>().enabled = true;
-            gameRunning = false;
-        } 
-        else if (left.fort.IsDead() || right.fort.IsDead()) {
+        if (left.fort.IsDead() || right.fort.IsDead()) {
             Time.timeScale = 0;
             loseScreen.GetComponent<SpriteRenderer>().enabled = true;
             gameRunning = false;
