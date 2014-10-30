@@ -42,9 +42,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 0}
   hitPoints: 1
-  moveSpeed: 3
+  moveDistance: 10
   floorContribution: 1
-  roofTargetOffset: -40
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
