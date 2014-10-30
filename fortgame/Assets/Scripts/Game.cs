@@ -214,13 +214,11 @@ public class Game : MonoBehaviour {
                     {
                         if (resCount == 0)
                         {
-                            Debug.Log("one");
                             first = r;
                             resCount++;
                         }
                         else if (resCount == 1)
                         {
-                            Debug.Log("two");
                             second = r;
                             resCount++;
                         }
@@ -228,22 +226,10 @@ public class Game : MonoBehaviour {
                 }
                 if (resCount == 2 && !t.player.box.overlap(t.fort.labBox))
                 {
-                    Debug.Log("combine!");
-                    GameObject g = null;
-                    if (t.direction < 0)
-                    {
-                        g = (GameObject)Instantiate(
-                            combinationResource, 
-                            new Vector3(t.fort.box.x + t.fort.box.width, transform.position.y, transform.position.z), 
-                            new Quaternion(0, 0, 0, 0));
-                    }
-                    else
-                    {
-                        g = (GameObject)Instantiate(
+                    GameObject g = (GameObject)Instantiate(
                             combinationResource,
-                            new Vector3(t.fort.box.x, transform.position.y, transform.position.z),
+                            new Vector3(t.fort.labBox.x + t.fort.labBox.width / 2, t.fort.transform.position.y, t.fort.transform.position.z), 
                             new Quaternion(0, 0, 0, 0));
-                    }
                     newResources.Add(g.GetComponent<Resource>());
                     deadResources.Add(first);
                     deadResources.Add(second);
