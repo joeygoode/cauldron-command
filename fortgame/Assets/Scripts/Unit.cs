@@ -8,6 +8,7 @@ public abstract class Unit : MonoBehaviour {
 
     public abstract void UnityStart();
     public abstract void UnityFixedUpdate();
+    public abstract void UnityUpdate();
 
 	// Use this for initialization
 	void Start () {
@@ -19,4 +20,9 @@ public abstract class Unit : MonoBehaviour {
 	void FixedUpdate () {
         UnityFixedUpdate();
 	}
+
+    void Update()
+    {
+        UnityUpdate();
+    }
 }

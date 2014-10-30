@@ -34,6 +34,11 @@ public class Mob : Unit {
 
         animator = GetComponent<Animator>();
 	}
+    public override void UnityUpdate()
+    {
+
+    }
+
     
     public override void UnityFixedUpdate () {
         //motion
