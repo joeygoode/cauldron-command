@@ -12,7 +12,7 @@ public class Game : MonoBehaviour {
     public float resourceFortSpacing = 20;
     public GameObject background;
     public List<GameObject> resourceTypes;
-    public GameObject combinationResource;
+    public List<GameObject> combinationRecipes;
 
     private bool gameRunning = true;
     private float resourceSpawnCountdown;
@@ -230,13 +230,21 @@ public class Game : MonoBehaviour {
                 }
                 if (resCount == 2 && !t.player.box.overlap(t.fort.labBox))
                 {
-                    GameObject g = (GameObject)Instantiate(
-                            combinationResource,
-                            new Vector3(t.fort.labBox.x + t.fort.labBox.width / 2, t.fort.transform.position.y, t.fort.transform.position.z), 
+                    foreach (GameObject gRec in combinationRecipes)
+                    {
+                        Recipe rec = gRec.GetComponent<Recipe>();
+                        if ((rec.resource1 + "(Clone)" == first.name && rec.resource2 + "(Clone)" == second.name) ||
+                            (rec.resource1 + "(Clone)" == second.name && rec.resource2 + "(Clone)" == first.name))
+                        {
+                            GameObject g = (GameObject)Instantiate(
+                            rec.result,
+                            new Vector3(t.fort.labBox.x + t.fort.labBox.width / 2, t.fort.transform.position.y, t.fort.transform.position.z),
                             new Quaternion(0, 0, 0, 0));
-                    newResources.Add(g.GetComponent<Resource>());
-                    deadResources.Add(first);
-                    deadResources.Add(second);
+                            newResources.Add(g.GetComponent<Resource>());
+                            deadResources.Add(first);
+                            deadResources.Add(second);
+                        }
+                    }
                 }
             }
 
