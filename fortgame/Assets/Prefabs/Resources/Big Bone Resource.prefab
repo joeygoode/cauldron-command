@@ -41,9 +41,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carriedResourceHeight: 30
-  tombstone: {fileID: 21300000, guid: 5461493e5a89aa8418d457e76f10219c, type: 3}
-  resource: {fileID: 21300000, guid: 0d53168ef3d14cf449cc0b6e1c171f53, type: 3}
-  width: 48
+  tombstone: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
+  resource: {fileID: 21300000, guid: 0843fa796b457c44292383c631616448, type: 3}
+  width: 24
   mobPrefab: {fileID: 100000, guid: 86aea7d31c8eb6947a63017f4c4fc869, type: 2}
   level: 0
 --- !u!212 &21200000
