@@ -43,13 +43,14 @@ MonoBehaviour:
   team: {fileID: 0}
   hitPoints: 1
   moveSpeed: 5
-  launchSpeed: 10
+  launchSpeed: 7
   floorContribution: 0
-  healthBoost: 20
-  maxRotPerSec: 5
+  healthBoost: 10
+  maxRotPerSec: .5
   velocityInfluenceTime: 2
   roofTargetOffset: 200
   velocity: {x: 0, y: 0, z: 0}
+  randomSprites: []
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

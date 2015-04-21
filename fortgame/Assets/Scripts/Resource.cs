@@ -86,4 +86,9 @@ public class Resource : MonoBehaviour {
     {
         return inCauldron;
     }
+
+    public void Destroy()
+    {
+        Object.Destroy(this.gameObject);
+    }
 }

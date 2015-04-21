@@ -6,6 +6,7 @@ public class Fort : MonoBehaviour {
     public int maxHitpoints = 150;
     public int baseHitpoints = 150;
     public int hitpointsPerFloor = 100;
+    public int hitpointsPerLategameFloor = 30;
     public float width = 32;
     public int direction = 1;
     public GameObject cauldronPrefab;
@@ -28,6 +29,8 @@ public class Fort : MonoBehaviour {
     public OneDBox doorBox = new OneDBox(0, 0, 0);
     [HideInInspector]
     public OneDBox floorBox = new OneDBox(0, 0, 0);
+
+    private int constructionTicker = 0;
 
     public int cauldronsPerFloor = 2;
     public float cauldronSpawnRate = 3.0f;
@@ -107,7 +110,15 @@ public class Fort : MonoBehaviour {
             GameObject floorObj = (GameObject)Instantiate(floorPrefab, floorPos, this.transform.rotation);
             floorObjects.Add(floorObj);
             //add hitpoints
-            hitpoints += hitpointsPerFloor;
+            if (constructionTicker < maxFloors)
+            {
+                hitpoints += hitpointsPerFloor;
+                constructionTicker++;
+            }
+            else
+            {
+                hitpoints += hitpointsPerLategameFloor;
+            }
             //add cauldrons on the floor
             cauldrons.Add(new List<Cauldron>());
             for (int i = 0; i < cauldronsPerFloor; i++)
@@ -130,6 +141,16 @@ public class Fort : MonoBehaviour {
             }
 
         }
+
+        //check for floor death
+        if (hitpoints < baseHitpoints + (floors - 1) * hitpointsPerFloor)
+        {
+            if (floors > 0)
+            {
+                floors--;
+            }
+        }
+
         if (floorObjects.Count > floors)
         {
             //destroy floor sprites
@@ -138,6 +159,10 @@ public class Fort : MonoBehaviour {
             //destroy cauldrons
             foreach (Cauldron c in cauldrons[floorObjects.Count])
             {
+                if (c.hasResource)
+                {
+                    c.resource.Destroy();
+                }
                 c.Destroy();
             }
             cauldrons.RemoveAt(floorObjects.Count);

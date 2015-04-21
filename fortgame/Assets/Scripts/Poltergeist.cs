@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Poltergeist : Unit {
     public float moveSpeed = 10;
@@ -16,11 +16,18 @@ public class Poltergeist : Unit {
 
     public Vector3 velocity = new Vector3(0, 0, 0);
 
+    public List<Sprite> randomSprites = new List<Sprite>();
+
 	// Use this for initialization
 	public override void UnityStart () {
         rotationSpeed = (Random.value * 2 - 1) * maxRotPerSec;
         velocityInfluenceTimer = velocityInfluenceTime;
         velocity = new Vector3((Random.value * 2 - 1) * launchSpeed, Random.value * launchSpeed, 0);
+        if (randomSprites.Count > 0)
+        {
+            SpriteRenderer sprender = GetComponent<SpriteRenderer>();
+            sprender.sprite = randomSprites[Random.Range((int)0, randomSprites.Count)];
+        }
 	}
 
     public override void UnityFixedUpdate()
