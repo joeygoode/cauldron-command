@@ -28,15 +28,18 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetAxisRaw("FFWD") > 0)
+        {
+            Time.timeScale = 3;
+        }
+        else if (Input.GetAxisRaw("FFWD") < 0)
+        {
+            Time.timeScale = 1;
+        }
         if (left.fort.IsDead() || right.fort.IsDead()) {
             Time.timeScale = 0;
             loseScreen.GetComponent<SpriteRenderer>().enabled = true;
             gameRunning = false;
-        }
-        else
-        {
-            Time.timeScale = 1;
-            gameRunning = true;
         }
 
         float resetButton = Input.GetAxisRaw("Reset");
