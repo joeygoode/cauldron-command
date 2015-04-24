@@ -36,10 +36,26 @@ public class PlayerController : MonoBehaviour {
 
     public int floorPos = 0;
 
+    public AudioClip pickupClip;
+    public AudioClip putdownClip;
+
+    private AudioSource pickupSource;
+    private AudioSource putdownSource;
+
     // Use this for initialization
     void Start () {
         box = new OneDBox(transform.position.x - (width / 2), width, 0); 
         animator = GetComponent<Animator>();
+
+        pickupSource = gameObject.AddComponent<AudioSource>();
+        pickupSource.clip = pickupClip;
+        pickupSource.playOnAwake = false;
+        pickupSource.loop = false;
+
+        putdownSource = gameObject.AddComponent<AudioSource>();
+        putdownSource.clip = putdownClip;
+        putdownSource.playOnAwake = false;
+        putdownSource.loop = false;
     }
 
     // Update is called once per frame
@@ -91,6 +107,7 @@ public class PlayerController : MonoBehaviour {
                 //lift item
                 if (game.RemoveResource(this))
                 {
+                    pickupSource.Play();
                     animationTimer = pickUpDuration;
                     isLiftingNotDropping = true;
                     animator.SetBool("isLifting", true); //do you even lift bro?
@@ -99,6 +116,7 @@ public class PlayerController : MonoBehaviour {
             else
             {
                 //drop item
+                putdownSource.Play();
                 heldResource.Drop();
                 game.AddResource(heldResource);
                 heldResource = null;

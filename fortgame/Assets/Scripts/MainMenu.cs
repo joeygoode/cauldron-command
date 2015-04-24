@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float s = Input.GetAxis("Start-Pause");
+        float s = Input.GetAxis("Submit");
         if (s > 0.0)
         {
             Application.LoadLevel("game");

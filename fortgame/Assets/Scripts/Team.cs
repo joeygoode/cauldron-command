@@ -140,6 +140,7 @@ public class Team : MonoBehaviour {
         Unit u = g.GetComponent<Unit>();
         u.team = this;
         units.Add(u);
+        //u.PlaySound();
     }
 
     public void CollideWithFort (Fort f) {

@@ -10,9 +10,21 @@ public abstract class Unit : MonoBehaviour {
     public abstract void UnityFixedUpdate();
     public abstract void UnityUpdate();
 
+    public AudioClip sound;
+    private AudioSource aSource;
+
+    static float maxDelay = .2f;
+    static float pitchMax = 2;
+    static float pitchMin = .5f;
+
 	// Use this for initialization
 	void Start () {
         GetComponent<SpriteRenderer>().color = team.color;
+        aSource = gameObject.AddComponent<AudioSource>();
+        aSource.clip = sound;
+        aSource.loop = false;
+        aSource.playOnAwake = false;
+        PlaySound();
         UnityStart();
 	}
 	
@@ -24,5 +36,11 @@ public abstract class Unit : MonoBehaviour {
     void Update()
     {
         UnityUpdate();
+    }
+
+    public void PlaySound()
+    {
+        aSource.PlayDelayed(Random.value * maxDelay);
+        aSource.pitch = Random.Range(pitchMin, pitchMax);
     }
 }
